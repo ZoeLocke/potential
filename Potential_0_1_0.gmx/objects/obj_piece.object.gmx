@@ -130,9 +130,39 @@ if (y &lt; (room_height / 2)) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(active) {
+            <string>///Track mouse if active
+
+if(active) {
     x = mouse_x;
     y = mouse_y;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Fade if dead
+
+if(charge = 0) {
+    image_alpha = 0.5;
+} else {
+
+    image_alpha = 1;
 }
 </string>
           </argument>
@@ -160,15 +190,18 @@ if (y &lt; (room_height / 2)) {
 
 //If the global variable says a piece is currently active, put the piece down,
 // and toggle the variable, else pick the current piece up and toggle the variable
+//Includes a check that blocks the code if the charge controls are currently present
 
 //Prevents picking up multiple pieces
 
-if(global.piece_active) {
-    global.piece_active = false;
-    active = false;
-} else {
-    global.piece_active = true;
-    active = true;
+if(!instance_exists(obj_arrow_up)) {
+    if(global.piece_active) {
+        global.piece_active = false;
+        active = false;
+    } else {
+        global.piece_active = true;
+        active = true;
+    }
 }
 </string>
           </argument>

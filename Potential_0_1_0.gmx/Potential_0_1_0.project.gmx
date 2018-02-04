@@ -25,6 +25,7 @@
       <object>objects\obj_settingsControl</object>
       <object>objects\obj_controller</object>
       <object>objects\obj_arrowDown</object>
+      <object>objects\obj_arrow</object>
       <object>objects\obj_arrowUp</object>
       <object>objects\obj_snapGuide</object>
     </objects>

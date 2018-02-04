@@ -99,7 +99,7 @@ if(inst != noone) {
 
 //Only run if no piece is active
 if(!global.piece_active) {
-
+/*
 //Set variable for object under current mouse position
 var inst = instance_position(mouse_x, mouse_y, obj_piece)
     
@@ -110,8 +110,8 @@ var inst = instance_position(mouse_x, mouse_y, obj_piece)
             with(inst){
                 var newx = inst.x + (inst.sprite_width / 2);
                 var newy = inst.y + (inst.sprite_height / 2);
-                instance_create(newx + 40, newy - 10, obj_arrowUp);
-                instance_create(newx + 40, newy + 10, obj_arrowDown);
+                instance_create(newx + 40, newy - 10, obj_arrow);
+                instance_create(newx + 40, newy + 10, obj_arrow);
             }
         }
     } else {
@@ -120,6 +120,43 @@ var inst = instance_position(mouse_x, mouse_y, obj_piece)
     instance_destroy(obj_arrowDown);
     }
 }
+*/
+
+//Set variable for object under current mouse position
+var inst = instance_position(mouse_x, mouse_y, obj_piece)
+    
+    //If the controlls aren't present, and the mouse is over a piece,
+    // create the controlls positioned from the piece
+    if(!instance_exists(obj_arrow)) {
+        if(inst != noone) {
+            with(inst){
+                var newx = inst.x + (inst.sprite_width / 2);
+                var newy = inst.y + (inst.sprite_height / 2);
+                
+                //Create upper arrow facing upwards
+                var arrowUp;
+                arrowUp = instance_create(newx + 40, newy - 10, obj_arrow);
+                with (arrowUp) {
+                    facing = 0;
+                    image_angle = 90 * facing;
+                }
+                
+                //Create lower arrow facing downwards
+                var arrowDown;
+                arrowDown = instance_create(newx + 40, newy + 10, obj_arrow);
+                with (arrowDown) {
+                    facing = 2;
+                    image_angle = 90 * facing;
+                }
+            }
+        }
+    } else {
+    //If controls are present anywhere on screen, remove them
+    instance_destroy(obj_arrow);
+    }
+}
+
+
 </string>
           </argument>
         </arguments>

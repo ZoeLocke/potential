@@ -11,6 +11,7 @@
     <sprite>sprites\spr_arrow</sprite>
     <sprite>sprites\spr_snapGuide</sprite>
     <sprite>sprites\spr_settingsControl</sprite>
+    <sprite>sprites\spr_resetButton</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -29,6 +30,7 @@
       <object>objects\obj_arrow</object>
       <object>objects\obj_settingsArrow</object>
       <object>objects\obj_snapGuide</object>
+      <object>objects\obj_resetButton</object>
     </objects>
     <objects name="gameObjects">
       <object>objects\obj_board</object>

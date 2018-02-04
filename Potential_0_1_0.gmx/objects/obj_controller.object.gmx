@@ -66,7 +66,7 @@ var inst = instance_position(mouse_x, mouse_y, obj_piece);
 //Increment charge (includes safety check for presence of piece object)
 if(inst != noone) {
     with(inst){
-        if(charge &lt; global.maxCharge) {
+        if(charge &lt; global.settings[0,1]) {
             charge++;
         }else{
             charge = 0;
@@ -138,7 +138,6 @@ var inst = instance_position(mouse_x, mouse_y, obj_piece)
                 arrowUp = instance_create(newx + 40, newy - 10, obj_arrow);
                 with (arrowUp) {
                     facing = 0;
-                    image_angle = 90 * facing;
                 }
                 
                 //Create lower arrow facing downwards
@@ -146,7 +145,6 @@ var inst = instance_position(mouse_x, mouse_y, obj_piece)
                 arrowDown = instance_create(newx + 40, newy + 10, obj_arrow);
                 with (arrowDown) {
                     facing = 2;
-                    image_angle = 90 * facing;
                 }
             }
         }
@@ -180,12 +178,8 @@ var inst = instance_position(mouse_x, mouse_y, obj_piece)
           <argument>
             <kind>1</kind>
             <string>///Clear charge controls
-if(
-   !place_meeting(mouse_x, mouse_y, obj_arrowUp)
-   &amp;&amp; !place_meeting(mouse_x, mouse_y, obj_arrowDown)
-   ) {
-        instance_destroy(obj_arrowUp);
-        instance_destroy(obj_arrowDown);
+if(!place_meeting(mouse_x, mouse_y, obj_arrow)) {
+        instance_destroy(obj_arrow);
 }
 </string>
           </argument>

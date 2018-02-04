@@ -15,6 +15,7 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_populateBoard.gml</script>
+    <script>scripts\scr_populateSettings.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_arialLarge</font>
@@ -24,9 +25,8 @@
     <objects name="controls">
       <object>objects\obj_settingsControl</object>
       <object>objects\obj_controller</object>
-      <object>objects\obj_arrowDown</object>
       <object>objects\obj_arrow</object>
-      <object>objects\obj_arrowUp</object>
+      <object>objects\obj_settingsArrow</object>
       <object>objects\obj_snapGuide</object>
     </objects>
     <objects name="gameObjects">

@@ -54,7 +54,7 @@
           <argument>
             <kind>1</kind>
             <string>///Set variables, colour, and z index
-charge = floor(global.maxCharge / 2);
+charge = floor(global.settings[0,1] / 2);
 active = false;
 colliding = false;
 

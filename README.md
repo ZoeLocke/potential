@@ -14,8 +14,8 @@ The game at this stage should include the following features/capabilities:
   - [x] Distinct pieces as individual instances
   - [x] Display current charge
 - [x] Piece movement (no restrictions on movement at this time)
-- [ ] Manual charge transfer
-- [ ] Piece removal (manual only at this time)
+- [X] Manual charge transfer
+- [X] Piece removal (manual only at this time)
 - [ ] Game reset
 - [ ] Tutorial
 

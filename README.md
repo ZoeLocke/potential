@@ -17,8 +17,8 @@ The game at this stage should include the following features/capabilities:
 - [X] Manual charge transfer
 - [X] Piece removal (manual only at this time)
 - [ ] Game reset
-- [ ] Board type setting
-- [ ] Max charge setting
+- [x] Board type setting
+- [X] Max charge setting
 - [ ] Tutorial
 
 ### 0.2.0

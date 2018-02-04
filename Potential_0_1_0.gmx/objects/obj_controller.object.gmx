@@ -108,8 +108,10 @@ var inst = instance_position(mouse_x, mouse_y, obj_piece)
     if(!instance_exists(obj_arrowUp)) {
         if(inst != noone) {
             with(inst){
-                instance_create(inst.x + 40, inst.y - 10, obj_arrowUp);
-                instance_create(inst.x + 40, inst.y + 10, obj_arrowDown);
+                var newx = inst.x + (inst.sprite_width / 2);
+                var newy = inst.y + (inst.sprite_height / 2);
+                instance_create(newx + 40, newy - 10, obj_arrowUp);
+                instance_create(newx + 40, newy + 10, obj_arrowDown);
             }
         }
     } else {

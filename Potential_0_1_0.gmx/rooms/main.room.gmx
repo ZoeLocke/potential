@@ -11,7 +11,8 @@
   <colour>16777215</colour>
   <showcolour>-1</showcolour>
   <code>global.piece_active = false;
-global.maxCharge = 4;</code>
+global.maxCharge = 4;
+script_execute(scr_populateBoard);</code>
   <enableViews>0</enableViews>
   <clearViewBackground>0</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -53,23 +54,9 @@ global.maxCharge = 4;</code>
   </views>
   <instances>
     <instance objName="obj_board" x="960" y="608" name="inst_EBB5CC13" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_piece" x="624" y="270" name="inst_F1916221" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_piece" x="718" y="366" name="inst_558042E3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_piece" x="817" y="273" name="inst_59FC75AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_piece" x="911" y="366" name="inst_3A488762" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_piece" x="1010" y="274" name="inst_8BA14126" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_piece" x="1108" y="365" name="inst_6BACD9A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_piece" x="1201" y="269" name="inst_8578BE78" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_piece" x="1297" y="367" name="inst_8F80230D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_piece" x="624" y="944" name="inst_8C62E045" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_piece" x="721" y="846" name="inst_9B3CCB77" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_piece" x="818" y="945" name="inst_3509D120" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_piece" x="911" y="846" name="inst_C99F06F3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_piece" x="1009" y="945" name="inst_92BD8326" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_piece" x="1104" y="848" name="inst_527B27E9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_piece" x="1199" y="948" name="inst_2C93DC21" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_piece" x="1297" y="850" name="inst_4B606395" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_controller" x="0" y="0" name="inst_BB9F2922" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_controller" x="160" y="0" name="inst_BB9F2922" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_snapGuide" x="-224" y="-96" name="inst_E76DF25C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_piece" x="-224" y="32" name="inst_C746B73F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

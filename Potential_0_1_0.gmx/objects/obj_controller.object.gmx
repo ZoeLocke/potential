@@ -105,17 +105,17 @@ var inst = instance_position(mouse_x, mouse_y, obj_piece)
     
     //If the controlls aren't present, and the mouse is over a piece,
     // create the controlls positioned from the piece
-    if(!instance_exists(obj_arrow_up)) {
+    if(!instance_exists(obj_arrowUp)) {
         if(inst != noone) {
             with(inst){
-                instance_create(inst.x + 40, inst.y - 10, obj_arrow_up);
-                instance_create(inst.x + 40, inst.y + 10, obj_arrow_down);
+                instance_create(inst.x + 40, inst.y - 10, obj_arrowUp);
+                instance_create(inst.x + 40, inst.y + 10, obj_arrowDown);
             }
         }
     } else {
     //If controls are present anywhere on screen, remove them
-    instance_destroy(obj_arrow_up);
-    instance_destroy(obj_arrow_down);
+    instance_destroy(obj_arrowUp);
+    instance_destroy(obj_arrowDown);
     }
 }
 </string>

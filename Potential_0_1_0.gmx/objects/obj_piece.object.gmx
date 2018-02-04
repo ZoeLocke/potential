@@ -131,10 +131,17 @@ if (y &lt; (room_height / 2)) {
           <argument>
             <kind>1</kind>
             <string>///Track mouse if active
-
 if(active) {
-    x = mouse_x;
-    y = mouse_y;
+    x = mouse_x - (sprite_width / 2);
+    y = mouse_y - (sprite_height / 2);
+} else {
+//Else adhere to nearest snapGuide
+    var inst;
+    inst = instance_position(x + 48, y + 48, obj_snapGuide);
+    if(inst != noone) {
+        x = inst.x;
+        y = inst.y;
+    }
 }
 </string>
           </argument>
@@ -194,7 +201,7 @@ if(charge = 0) {
 
 //Prevents picking up multiple pieces
 
-if(!instance_exists(obj_arrow_up)) {
+if(!instance_exists(obj_arrowUp)) {
     if(global.piece_active) {
         global.piece_active = false;
         active = false;
@@ -286,7 +293,7 @@ if(!instance_exists(obj_arrow_up)) {
             <string>draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 
-draw_text(x, y, floor(charge));
+draw_text(x + 48, y + 48, floor(charge));
 </string>
           </argument>
         </arguments>

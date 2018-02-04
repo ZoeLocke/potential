@@ -3,14 +3,14 @@
   <type>0</type>
   <xorig>0</xorig>
   <yorigin>0</yorigin>
-  <colkind>2</colkind>
+  <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>10</bbox_left>
-  <bbox_right>84</bbox_right>
-  <bbox_top>10</bbox_top>
-  <bbox_bottom>84</bbox_bottom>
+  <bbox_left>0</bbox_left>
+  <bbox_right>95</bbox_right>
+  <bbox_top>0</bbox_top>
+  <bbox_bottom>95</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -20,7 +20,6 @@
   <width>96</width>
   <height>96</height>
   <frames>
-    <frame index="0">images\spr_piece_0.png</frame>
-    <frame index="1">images\spr_piece_1.png</frame>
+    <frame index="0">images\spr_snapGuide_0.png</frame>
   </frames>
 </sprite>

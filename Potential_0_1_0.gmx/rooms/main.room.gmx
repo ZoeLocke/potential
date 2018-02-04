@@ -54,8 +54,8 @@ script_execute(scr_populateBoard);</code>
   </views>
   <instances>
     <instance objName="obj_board" x="960" y="608" name="inst_EBB5CC13" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_controller" x="160" y="0" name="inst_BB9F2922" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_snapGuide" x="-224" y="-96" name="inst_E76DF25C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_controller" x="0" y="0" name="inst_BB9F2922" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_snapGuide" x="-192" y="160" name="inst_E76DF25C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_piece" x="-224" y="32" name="inst_C746B73F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>

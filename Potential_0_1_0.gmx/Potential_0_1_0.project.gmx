@@ -17,15 +17,21 @@
     <script>scripts\scr_populateBoard.gml</script>
   </scripts>
   <fonts name="fonts">
-    <font>fonts\fnt_arial</font>
+    <font>fonts\fnt_arialLarge</font>
+    <font>fonts\fnt_arialSmall</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_controller</object>
-    <object>objects\obj_board</object>
-    <object>objects\obj_piece</object>
-    <object>objects\obj_arrowUp</object>
-    <object>objects\obj_arrowDown</object>
-    <object>objects\obj_snapGuide</object>
+    <objects name="controls">
+      <object>objects\obj_settingsControl</object>
+      <object>objects\obj_controller</object>
+      <object>objects\obj_arrowDown</object>
+      <object>objects\obj_arrowUp</object>
+      <object>objects\obj_snapGuide</object>
+    </objects>
+    <objects name="gameObjects">
+      <object>objects\obj_board</object>
+      <object>objects\obj_piece</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_instantiate</room>

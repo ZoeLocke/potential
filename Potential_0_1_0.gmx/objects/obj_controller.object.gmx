@@ -173,7 +173,7 @@ if(
           <argument>
             <kind>1</kind>
             <string>///Bugfixing text
-//draw_set_font(fnt_arial);
+//draw_set_font(fnt_arialLarge);
 //draw_set_colour(c_black);
 
 //draw_text(x, y, coliding);

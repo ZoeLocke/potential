@@ -10,6 +10,7 @@
     <sprite>sprites\spr_piece</sprite>
     <sprite>sprites\spr_arrow</sprite>
     <sprite>sprites\spr_snapGuide</sprite>
+    <sprite>sprites\spr_settingsControl</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>

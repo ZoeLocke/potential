@@ -99,9 +99,55 @@ y-=2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Show change visual
+            <string>///Adjust value
+
+//Show change visual
 y+=2;
 alarm[0] = 2;
+
+//Change value depending on button pressed and value type
+var inst = instance_position(x, y, obj_settingsControl);
+
+if(effect = "increment") {
+    if(global.settings[inst.settingType,0] = "Max Charge") {
+        
+        if(global.settings[0,1] &lt; 8) {
+            global.settings[0,1]++;
+        } else {
+            global.settings[0,1] = 2;
+        }
+    
+    } else if(global.settings[inst.settingType,0] = "Entropy Type") {
+        
+        if(global.settings[1,1] &lt; array_length_1d(global.entropyTypes)-1) {
+            global.settings[1,1]++;
+        } else {
+            global.settings[1,1] = 0;
+        }
+    }
+}
+
+if(effect = "decrement") {
+    if(global.settings[inst.settingType,0] = "Max Charge") {
+        
+        if(global.settings[0,1] &gt; 2) {
+            global.settings[0,1]--;
+        } else {
+            global.settings[0,1] = 8;
+        }
+    
+    } else if(global.settings[inst.settingType,0] = "Entropy Type") {
+        
+        if(global.settings[1,1] &gt; 0) {
+            global.settings[1,1]--
+        } else {
+            global.settings[1,1] = array_length_1d(global.entropyTypes)-1;
+        }
+    }
+}
+
+//Rebuild the board with the new settings
+script_execute(scr_populateBoard);
 </string>
           </argument>
         </arguments>

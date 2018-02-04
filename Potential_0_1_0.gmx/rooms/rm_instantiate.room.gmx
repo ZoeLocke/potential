@@ -12,13 +12,13 @@
   <showcolour>-1</showcolour>
   <code>global.piece_active = false;
 
-global.boardTypes[0] = "Full Entropy"
-global.boardTypes[1] = "Entropic Sides"
-global.boardTypes[2] = "Entropic Ends"
+global.entropyTypes[0] = "Full"
+global.entropyTypes[1] = "Sides"
+global.entropyTypes[2] = "Ends"
 
 global.settings[0,0] = "Max Charge";
 global.settings[0,1] = 4;
-global.settings[1,0] = "Board Type";
+global.settings[1,0] = "Entropy Type";
 global.settings[1,1] = 0;
 
 room_goto(1);</code>

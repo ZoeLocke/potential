@@ -2,6 +2,10 @@
 //Populate board with snap guides
 var i;
 var j;
+
+if(instance_exists(obj_piece)) instance_destroy(obj_piece);
+if(instance_exists(obj_snapGuide)) instance_destroy(obj_snapGuide);
+
 for(i = 0; i < 10; i++) {
     for(j = 0; j < 10; j++) {
         instance_create(

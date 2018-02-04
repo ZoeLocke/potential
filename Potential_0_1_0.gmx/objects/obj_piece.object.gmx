@@ -180,7 +180,7 @@ if(place_meeting(x, y, obj_piece)) {colliding = true} else {colliding = false};
 
 
 //Only run if the charge controls are not currently present
-if(!instance_exists(obj_arrowUp)) {
+if(!instance_exists(obj_arrow)) {
     //If the piece is currently active, and not over another piece, put it down
     if(active &amp;&amp; !colliding) {
         active = false;

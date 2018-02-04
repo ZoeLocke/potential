@@ -20,11 +20,11 @@
     <font>fonts\fnt_arial</font>
   </fonts>
   <objects name="objects">
+    <object>objects\obj_controller</object>
     <object>objects\obj_board</object>
     <object>objects\obj_piece</object>
     <object>objects\obj_arrowUp</object>
     <object>objects\obj_arrowDown</object>
-    <object>objects\obj_controller</object>
     <object>objects\obj_snapGuide</object>
   </objects>
   <rooms name="rooms">

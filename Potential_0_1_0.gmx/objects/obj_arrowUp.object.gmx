@@ -73,22 +73,9 @@ y-=2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Increment charge up
-
-//Set variable for piece currently under charge controlls
-var inst;
-inst = instance_position(x - 40, y - 10, obj_piece)
-
-//Increment charge (includes safety check for presence of piece object)
-if(inst != noone) {
-    with(inst){
-        if(charge &lt; global.maxCharge) {
-            charge++;
-        }else{
-            charge = 0;
-        }
-    }
-}
+            <string>///Show change visual
+y+=2;
+alarm[0] = 2;
 </string>
           </argument>
         </arguments>
@@ -109,9 +96,22 @@ if(inst != noone) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Show change visual
-y+=2;
-alarm[0] = 2;
+            <string>///Increment charge up
+
+//Set variable for piece currently under charge controlls
+var inst;
+inst = instance_position(x - 40, y - 10, obj_piece)
+
+//Increment charge (includes safety check for presence of piece object)
+if(inst != noone) {
+    with(inst){
+        if(charge &lt; global.maxCharge) {
+            charge++;
+        }else{
+            charge = 0;
+        }
+    }
+}
 </string>
           </argument>
         </arguments>

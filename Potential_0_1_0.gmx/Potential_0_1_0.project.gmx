@@ -18,6 +18,7 @@
   <scripts name="scripts">
     <script>scripts\scr_populateBoard.gml</script>
     <script>scripts\scr_populateSettings.gml</script>
+    <script>scripts\scr_scaleCanvas.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_arialLarge</font>

@@ -46,15 +46,16 @@ googleAnalytics = ""
   # about section
   [params.about]
     enable = true
-    title = "Who am I"
+    title = "How to Play"
     description = "Aliquam ante ac id. Adipiscing interdum lorem praesent fusce pellentesque arcu feugiat. Consequat sed ultricies rutrum. Sed adipiscing eu amet interdum lorem blandit vis ac commodo aliquet integer vulputate phasellus lorem ipsum dolor lorem magna consequat sed etiam adipiscing interdum."
     buttontext = "next"
+	buttondest = "#infos"
     # the picture is storead at static/images/
     picture = "pic01.jpg"
 
   # skill section
   [params.skill_list]
-    enable = true
+    enable = false
     title = "Stuff I do"
     description = "Consequat sed ultricies rutrum. Sed adipiscing eu amet interdum lorem blandit vis ac commodo aliquet vulputate."
     buttontext = "next"
@@ -76,11 +77,14 @@ googleAnalytics = ""
     [[params.skills]]
       icon = "fa-coffee"
       title = "Sed Feugiat"
+	  
   # infos section
   [params.infos]
     enable = true
-    title = "One more thing"
+    title = "Help Make Potential Better"
     description = "Aliquam ante ac id. Adipiscing interdum lorem praesent fusce pellentesque arcu feugiat. Consequat sed ultricies rutrum. Sed adipiscing eu amet interdum lorem blandit vis ac commodo aliquet integer vulputate phasellus lorem ipsum dolor lorem magna consequat sed etiam adipiscing interdum."
+	buttontext = "next"
+	buttondest = "#footer"
     # the picture is storead at static/images/
     picture = "pic03.jpg"
 
@@ -94,7 +98,7 @@ googleAnalytics = ""
 
   [params.footer]
     enable = true
-    title = "Get in Touch"
+    title = "Give Us Your Feedback"
 
     # contact form
     [params.footer.contact]

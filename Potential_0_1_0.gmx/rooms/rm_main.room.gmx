@@ -10,7 +10,7 @@
   <persistent>0</persistent>
   <colour>16250871</colour>
   <showcolour>-1</showcolour>
-  <code>instance_create(480, 128, obj_board);
+  <code>instance_create(room_width / 2, room_height / 2.5 , obj_board);
 script_execute(scr_populateBoard);
 //script_execute(scr_populateSettings);</code>
   <enableViews>0</enableViews>

@@ -5,7 +5,8 @@
 <section id="header">
 
   <header class="major 1">
-    <h1>{{ with .Site.Params.hero.title }} {{ . | markdownify }} {{ end }}</h1>
+	 <span class="image fit primary"><img src="images/{{ with .Site.Params.hero.picture }}{{ . }}{{ end }}" alt="" /></span>
+    <!--<h1>{{ with .Site.Params.hero.title }} {{ . | markdownify }} {{ end }}</h1>-->
     <p class="subheading">{{ with .Site.Params.hero.description }} {{ . | markdownify }} {{ end }}</p>
   
  

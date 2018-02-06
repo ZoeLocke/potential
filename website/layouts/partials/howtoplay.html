@@ -9,7 +9,64 @@
         <header class="major">
           <h2>{{ with .Site.Params.howtoplay.title }}{{ . | markdownify }}{{ end }}</h2>
         </header>
-        <p>{{ with .Site.Params.howtoplay.description }}{{ . | markdownify }}{{ end }}</p>
+      
+	  <h3>Aim</h3>
+	  <p>Potential is an abstract strategy game for two players, loosely inspired by the idea of charged particles exchanging electrons.</p>
+	  <p>The aim of Potential is to be the only player with pieces left on the board. As soon as a player's last piece is removed, by any means, they lose.</p>
+	  <p>For a shorter game, instead agree in advance on a fixed amount of pieces to be removed.<p>
+	  
+	  <p><br></p>
+	  <h3>Setup</h3>
+	  <p>Choose your preferred max charge, initial charge, and entropy type (we'll cover that in a sec). <b>Changing these values later will reset the board!</b></p>
+	  <p>Max charge can't go over 8, or under 2, and initial charge must be at least 1 less than max charge.</p>
+	  <p>Keep in mind that higher initial and max charges can make for a very chaotic game, try the default setup first!</p>
+	  
+	  <p><br></p>
+	  <h3>Gameplay</h3>
+	  <p>Before we get to how you take your turn, lets go back to that entropy type setting.</p>
+	  <p>The area between the black borders and the edge of the board is the <i>entropy zone</i>.</p>
+	  <p>At the start of your turn, before you do anything else, you must reduce the charge of every one of your pieces in the entropy zone by 1.</p>
+	  <p>If your piece is reduced to zero charge, it's removed from the board, so keep an eye on those pieces!</p>
+	  
+	  <p><br></p>
+	  <h3>Your turn</h3>
+	  <p>You must pick on of your pieces to active this turn. Once you start moving that piece it has become the <i>active piece</i>.</p>
+	  <p>You may only move your active piece during your turn.</p>
+	  <p>To complete your turn you must make a number of moves with your active piece equal to the piece's current <i>charge</i>.</p>
+	  <p>If the piece gains more charge during your turn, the number of moves it needs to make increasing accordingly.</p>
+	  <p><i><b>You must end your turn having made a number of moves equal to the piece's charge!</b></i></p>
+	  
+	  <p><br></p>
+	  <h3>The moves</h3>
+	  <p>The two moves you may take with your piece are <i>slide</i> and <i>jump</i>.</p>
+	  <p>To slide simply move the piece to an adjacent empty square.</p>
+	  <p>To jump, jump over an adjacent piece with an empty square directly behind it.</p>
+	  <p><i>You <b>may</b> move orthogonally and diagonally.</i></p>
+	  <p><i>You <b>may</b> jump over your own pieces.</i></p>
+	  <p><i>You may <b>not</b> move back to the square you left in your previous move.</i></p>
+	  
+	  <p><br></p>
+	  <h3>Charge and winning the game!</h3>
+	  <p>Charge is key to winning Potential.</p>
+	  <p><i>If a piece runs out of charge it is removed from the game.</i></p>
+	  <p><i>If a piece gains charge above the max charge allowed it too is removed from the game!</i></p>
+	  <p>When you jump over another piece (regardless of who owns it) you must reduce that piece's charge by 1, and increase your active piece's charge by 1.</p>
+	  <p>This is where the importance of charge comes in:</p>
+	  <p>Jumping gives you extra moves in that turn, and a piece with lots of charge can move a lot, but risks being removed if it jumps too much.</p>
+	  <p>A piece with very little charge can't move much, but if it starts jumping it can take a lot of charge from other pieces.</p>
+	  <p>A piece with too much charge can be left in the entropy zone to drain off charge (remember? You have to remove a point of charge from all of your pieces in the zone at the start of your turn.)</p>
+	  
+	  <p><br></p>
+	  <h3>Playing the app</h3>
+	  <p>The app is being developed right now, so your <a href="#footer" title="Feedback" alt="">feedback</a> is extremely important, not just in terms of the app, but also the game itself! After you've had a few games please do consider filling in the form below.</p>
+	  <p><i>The app is currently at an early beta stage of development, so keep checking in for big updates yet to come!</i></p>
+	  <p>In it's current state the game doesn't do any of the work for you, you'll have to move the pieces, and make sure you move them correctly. You'll have to adjust charge and remove pieces.</p>
+	  <p>To move a piece simply left click it, and then click the square you would like to move it to.</p>
+	  <p>To adjust charge either use the scroll wheel of your mouse while hovering over a piece, or right click the piece and use the arrows, clicking away to close them.</p>
+	  <p>To remove a piece from the board simply move it to the white space beside the board.</p>
+	  <p>Use the big red button to reset the game!</p>
+	  <p>Have fun, and don't forget to let us know what you think!</p>
+	  
       </div>	  
       <a href="{{ with .Site.Params.howtoplay.buttondest }}{{ . }}{{ end }}" class="goto-next scrolly">{{ with .Site.Params.howtoplay.buttontext }}{{ . | markdownify }}{{ end }}</a>
     </div>

@@ -48,31 +48,22 @@ div.container {
 	width: 90%;
 }
 
-/*
-@media screen and (max-width: 1680px) {
-	.container {
-	width: 30em;
-	}
+.image:before {
+			background: url("");
+		}
+
+.image.fit {
+	background-color: none;
+	margin-left: auto;
+	margin-right: auto;
+	width: 60%;
 }
 
-@media screen and (max-width: 980px) {
-	.container {
-	width: 30em;
-	}
+.image.fit img {
+	margin-left: auto;
+	margin-right: auto;
+	width: 60%;
 }
-
-@media screen and (max-width: 736px) {
-.container {
-	width: 30em;
-	}
-}
-
-@media screen and (max-width: 480px) {
-	.container {
-	width: 30em;
-	}
-}	
-*/	
 			
 #gamecontainer {
 	height: 1000px;

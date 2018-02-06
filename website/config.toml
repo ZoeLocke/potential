@@ -43,15 +43,16 @@ googleAnalytics = ""
   # Hero Section
   [params.hero]
     title = "Potential"
-    description = "An abstract strategy game for two players"
+    description = "An abstract strategy game of charged particles for two players"
     buttontext = "begin"
 	buttondest = "#howtoplay"
+	picture = "logo.png"
 
   # How to play section
   [params.howtoplay]
     enable = true
     title = "How to Play"
-    description = "Aliquam ante ac id. Adipiscing interdum lorem praesent fusce pellentesque arcu feugiat. Consequat sed ultricies rutrum. Sed adipiscing eu amet interdum lorem blandit vis ac commodo aliquet integer vulputate phasellus lorem ipsum dolor lorem magna consequat sed etiam adipiscing interdum."
+    description = ""
     buttontext = "next"
 	buttondest = "#game"
     # the picture is storead at static/images/
@@ -95,39 +96,39 @@ googleAnalytics = ""
     [params.footer.social_list]
       enable = true
 
-      [[params.footer.social]]
-        title = "Twitter"
-        icon = "fa-twitter"
-        link = "#"
+     # [[params.footer.social]]
+      #  title = "Twitter"
+       # icon = "fa-twitter"
+        #link = "#"
 
-      [[params.footer.social]]
-        title = "Facebook"
-        icon = "fa-facebook"
-        link = "#"
+      #[[params.footer.social]]
+       # title = "Facebook"
+        #icon = "fa-facebook"
+        #link = "#"
 
-      [[params.footer.social]]
-        title = "Instagramm"
-        icon = "fa-instagram"
-        link = "#"
+#      [[params.footer.social]]
+ #       title = "Instagramm"
+  #      icon = "fa-instagram"
+   #     link = "#"
 
-      [[params.footer.social]]
-        title = "Dribbble"
-        icon = "fa-dribbble"
-        link = "#"
+    #  [[params.footer.social]]
+     #   title = "Dribbble"
+      #  icon = "fa-dribbble"
+       # link = "#"
 
-      [[params.footer.social]]
-        title = "Email"
-        icon = "fa-envelope"
-        link = "#"
+#      [[params.footer.social]]
+ #       title = "Email"
+  #      icon = "fa-envelope"
+   #     link = "#"
 
     # copyright
     #[params.footer.copyright.notice]
 
       [[params.footer.copyright.notice]]
-        text = "© Untitled"
+        text = "© Cuddly Cthulhu Creatives Ltd"
 
       [[params.footer.copyright.notice]]
-        text = "Design: [HTML5UP](//html5up.net)"
+        text = "Site Design: [HTML5UP](//html5up.net)"
 
       [[params.footer.copyright.notice]]
-        text = "Demo Images: [Unsplash](//unsplash.com/)"
+        text = "Game Design: Oz Locke"

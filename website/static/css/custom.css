@@ -21,10 +21,10 @@ html{
 }
 
 input[type="submit"]:hover,
-		input[type="reset"]:hover,
-		input[type="button"]:hover,
-		button:hover,
-		.button:hover {
+input[type="reset"]:hover,
+input[type="button"]:hover,
+button:hover,
+.button:hover {
 	background-color: #c8e9d5 !important;
 }
 	

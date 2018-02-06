@@ -1,5 +1,14 @@
-h1, h2, h3, p {
-	color: #252525;
+h2, h3, p {
+	color: #252525 !important;
+}
+
+p.subheading {
+	color: #F4F4F4 !important;
+	font-weight: 200 !important;
+}
+
+p {
+	text-transform: none !important;
 }
 
 html{
@@ -9,7 +18,7 @@ html{
 
 .button.special {
 			margin-top: 20%;
-			background-color: #fff;
+			background-color: #F4F4F4;
 			color: #252525 !important;
 		}
 		

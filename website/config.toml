@@ -8,7 +8,10 @@ theme = "hugo-highlights-theme"
 googleAnalytics = ""
 
 [params]
-
+  # Link custom assets relative to /static
+  custom_css = ["css/custom.css"]
+  favicon    = "favicon.ico"
+  
   # You can use Markdown for urls [text](//domain.tld/source)
   #
   # All icons using Fontawesom's icon font. Look at fortawesome.github.io/Font-Awesome/icons/
@@ -35,12 +38,12 @@ googleAnalytics = ""
   # If this param is set to true, every section gets an own background image (located at static/images)
   # to change the image you could use the param picture on every section.
   # If it's disabled you could change the background to overwrite the bg.png and overlay.png to set the background.
-  backgroundpersection = true
-
+  backgroundpersection = false
+  
   # Hero Section
   [params.hero]
-    title = "Highlights"
-    description = "a fun litte { responsive } single Pager by [HTML5UP](//html5up.net)"
+    title = "Potential"
+    description = "An abstract strategy game for two players"
     buttontext = "begin"
 	buttondest = "#howtoplay"
 
@@ -50,21 +53,20 @@ googleAnalytics = ""
     title = "How to Play"
     description = "Aliquam ante ac id. Adipiscing interdum lorem praesent fusce pellentesque arcu feugiat. Consequat sed ultricies rutrum. Sed adipiscing eu amet interdum lorem blandit vis ac commodo aliquet integer vulputate phasellus lorem ipsum dolor lorem magna consequat sed etiam adipiscing interdum."
     buttontext = "next"
-	buttondest = "#infos"
+	buttondest = "#game"
     # the picture is storead at static/images/
     picture = "pic01.jpg"
 
-
-	  
-  # infos section
-  [params.infos]
+  # The game section
+  [params.game]
     enable = true
-    title = "Help Make Potential Better"
-    description = "Aliquam ante ac id. Adipiscing interdum lorem praesent fusce pellentesque arcu feugiat. Consequat sed ultricies rutrum. Sed adipiscing eu amet interdum lorem blandit vis ac commodo aliquet integer vulputate phasellus lorem ipsum dolor lorem magna consequat sed etiam adipiscing interdum."
-	buttontext = "next"
+    title = "Play Potential!"
+    descriptiona = "This app is currently in active development. Please use the "
+	descriptionb = " below to report any issues you encounter with it."
+    buttontext = "next"
 	buttondest = "#footer"
     # the picture is storead at static/images/
-    picture = "pic03.jpg"
+    picture = "pic02.jpg"
 
   # footer section
   # this section includes
@@ -77,6 +79,7 @@ googleAnalytics = ""
   [params.footer]
     enable = true
     title = "Give Us Your Feedback"
+	description="Please help us improve Potential by letting us know what you thought of it."
 
     # contact form
     [params.footer.contact]

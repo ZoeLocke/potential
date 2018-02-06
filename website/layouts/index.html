@@ -14,9 +14,9 @@
 		{{ if .Site.Params.howtoplay.enable }}
 			{{ partial "howtoplay.html" . }}
 		{{ end }}
-
-		{{ if .Site.Params.infos.enable }}
-			{{ partial "infos.html" . }}
+		
+		{{ if .Site.Params.game.enable }}
+			{{ partial "game.html" . }}
 		{{ end }}
 
 		{{ if .Site.Params.footer.enable }}

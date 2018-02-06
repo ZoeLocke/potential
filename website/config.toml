@@ -42,9 +42,10 @@ googleAnalytics = ""
     title = "Highlights"
     description = "a fun litte { responsive } single Pager by [HTML5UP](//html5up.net)"
     buttontext = "begin"
+	buttondest = "#howtoplay"
 
-  # about section
-  [params.about]
+  # How to play section
+  [params.howtoplay]
     enable = true
     title = "How to Play"
     description = "Aliquam ante ac id. Adipiscing interdum lorem praesent fusce pellentesque arcu feugiat. Consequat sed ultricies rutrum. Sed adipiscing eu amet interdum lorem blandit vis ac commodo aliquet integer vulputate phasellus lorem ipsum dolor lorem magna consequat sed etiam adipiscing interdum."
@@ -53,30 +54,7 @@ googleAnalytics = ""
     # the picture is storead at static/images/
     picture = "pic01.jpg"
 
-  # skill section
-  [params.skill_list]
-    enable = false
-    title = "Stuff I do"
-    description = "Consequat sed ultricies rutrum. Sed adipiscing eu amet interdum lorem blandit vis ac commodo aliquet vulputate."
-    buttontext = "next"
-    # the picture is storead at static/images/
-    picture = "pic02.jpg"
 
-    [[params.skills]]
-      icon = "fa-camera-retro"
-      title = "Magna Etiam"
-
-    [[params.skills]]
-      icon = "fa-pencil"
-      title = "Lorem Ipsum"
-
-    [[params.skills]]
-      icon = "fa-code"
-      title = "Nulla Tempus"
-
-    [[params.skills]]
-      icon = "fa-coffee"
-      title = "Sed Feugiat"
 	  
   # infos section
   [params.infos]

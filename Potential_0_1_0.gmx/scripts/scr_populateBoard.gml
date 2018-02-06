@@ -2,6 +2,8 @@
 //Populate board with snap guides
 var i;
 var j;
+var startx = obj_board.x - (obj_board.sprite_width / 2)
+var starty = obj_board.y - (obj_board.sprite_height / 2)
 
 if(instance_exists(obj_piece)) instance_destroy(obj_piece);
 if(instance_exists(obj_snapGuide)) instance_destroy(obj_snapGuide);
@@ -9,8 +11,8 @@ if(instance_exists(obj_snapGuide)) instance_destroy(obj_snapGuide);
 for(i = 0; i < 10; i++) {
     for(j = 0; j < 10; j++) {
         instance_create(
-            480 + (obj_snapGuide.sprite_width * i)
-            ,128 + (obj_snapGuide.sprite_height * j)
+            startx + (obj_snapGuide.sprite_width * i)
+            ,starty + (obj_snapGuide.sprite_height * j)
             ,obj_snapGuide
         );
     }

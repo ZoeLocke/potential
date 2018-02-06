@@ -145,9 +145,6 @@ if(effect = "decrement") {
         }
     }
 }
-
-//Rebuild the board with the new settings
-script_execute(scr_populateBoard);
 </string>
           </argument>
         </arguments>

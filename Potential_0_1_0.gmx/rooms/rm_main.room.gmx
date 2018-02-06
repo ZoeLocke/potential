@@ -9,13 +9,13 @@
   <speed>30</speed>
   <persistent>0</persistent>
   <colour>16250871</colour>
-  <showcolour>0</showcolour>
+  <showcolour>-1</showcolour>
   <code>instance_create(room_width / 2, room_height / 2.5 , obj_board);
 script_execute(scr_populateBoard);
-draw_clear_alpha(c_white, 0);
+//draw_clear_alpha(c_white, 0);
 script_execute(scr_populateSettings);</code>
   <enableViews>0</enableViews>
-  <clearViewBackground>0</clearViewBackground>
+  <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
     <isSet>0</isSet>

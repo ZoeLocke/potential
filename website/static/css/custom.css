@@ -17,22 +17,29 @@ html{
 }
 
 .button.special {
-			margin-top: 20%;
-			background-color: #F4F4F4;
-			color: #252525 !important;
-		}
-		
+	margin-top: 20%;
+}
+
+input[type="submit"]:hover,
+		input[type="reset"]:hover,
+		input[type="button"]:hover,
+		button:hover,
+		.button:hover {
+	background-color: #c8e9d5 !important;
+}
+	
 .button.special:hover {
-			background-color: #999999;
-		}
+	background-color: #c8e9d5;		
+}
 		
 .main .goto-next {
-			background-color: #252525;
-		}		
+	background-color: #8cd1a8;
+}		
 
 .main .goto-next:hover {
-				background-color: #999999;
-			}
+	background-color: #c8e9d5;
+}
+
 div.container {
 	width: 60%;
 }

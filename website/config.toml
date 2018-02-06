@@ -61,8 +61,8 @@ googleAnalytics = ""
   [params.game]
     enable = true
     title = "Play Potential!"
-    descriptiona = "This app is currently in active development. Please use the "
-	descriptionb = " below to report any issues you encounter with it."
+    descriptiona = "This app is development. Please use the "
+	descriptionb = " below to report any issues."
     buttontext = "next"
 	buttondest = "#footer"
     # the picture is storead at static/images/

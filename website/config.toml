@@ -62,7 +62,7 @@ googleAnalytics = ""
   [params.game]
     enable = true
     title = "Play Potential!"
-    descriptiona = "This app is development. Please use the "
+    descriptiona = "This app is in development. Please use the "
 	descriptionb = " below to report any issues."
     buttontext = "next"
 	buttondest = "#footer"

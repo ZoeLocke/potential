@@ -25,11 +25,8 @@ for(i = 0; i < 2; i++) {
         if((i = 0 && j mod 2 == 0) || i = 1 && j mod 2 == 1){
             var startx = boardCornerx + obj_snapGuide.sprite_width;
             var starty = boardCornery + obj_snapGuide.sprite_height;
-            instance_create(
-                startx + (obj_piece.sprite_width * j)
-                ,starty + (obj_piece.sprite_height * i)
-                ,obj_piece
-            );
+            var inst = instance_create(startx + (obj_piece.sprite_width * j), starty + (obj_piece.sprite_height * i), obj_piece);
+            inst.image_index = 0;
         }
     }
 }
@@ -41,11 +38,8 @@ for(i = 0; i < 2; i++) {
         if((i = 0 && j mod 2 == 1) || i = 1 && j mod 2 == 0){
             var startx = boardCornerx + (obj_snapGuide.sprite_width);
             var starty = boardCornery + (obj_snapGuide.sprite_height * 7);
-            instance_create(
-                startx + (obj_piece.sprite_width * j)
-                ,starty + (obj_piece.sprite_height * i)
-                ,obj_piece
-            );
+            var inst = instance_create(startx + (obj_piece.sprite_width * j), starty + (obj_piece.sprite_height * i), obj_piece);
+            inst.image_index = 1;
         }
     }
 }

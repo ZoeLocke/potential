@@ -7,11 +7,13 @@
   <header class="major 1">
     <h1>{{ with .Site.Params.hero.title }} {{ . | markdownify }} {{ end }}</h1>
     <p>{{ with .Site.Params.hero.description }} {{ . | markdownify }} {{ end }}</p>
-  </header>
   
-  <div class="container">
+ 
+  
     <ul class="actions">
       <li><a href="{{ with .Site.Params.hero.buttondest }}{{ . }}{{ end }}" class="button special scrolly">{{ with .Site.Params.hero.buttontext }} {{ . | markdownify }} {{ end }}</a></li>
     </ul>
   </div>
+  </header>
+
 </section>

@@ -1,12 +1,63 @@
+h1, h2, h3, p {
+	color: #252525;
+}
+
 html{
 	background-image: url("");
 	background-color: #252525;
 }
 
 .button.special {
-			background-color: #252525;
+			margin-top: 20%;
+			background-color: #fff;
+			color: #252525 !important;
 		}
 		
 .button.special:hover {
 			background-color: #999999;
 		}
+		
+.main .goto-next {
+			background-color: #252525;
+		}		
+
+.main .goto-next:hover {
+				background-color: #999999;
+			}
+div.container {
+	width: 80%
+}
+
+.main .container .content {
+	width: 75%
+}
+
+/*
+@media screen and (max-width: 1680px) {
+	.container {
+	width: 30em;
+	}
+}
+
+@media screen and (max-width: 980px) {
+	.container {
+	width: 30em;
+	}
+}
+
+@media screen and (max-width: 736px) {
+.container {
+	width: 30em;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.container {
+	width: 30em;
+	}
+}	
+*/	
+			
+#gamecontainer {
+	height: 500px;
+}

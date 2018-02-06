@@ -16,15 +16,11 @@
 		  
         </header>
         
-		<div id="gameContainer">
-			<iframe src="https://cthulhucreates.github.io/potential/"	frameborder="0" scrolling="no" name="GameFrame" width="100%" height="auto%">Thanks for your interest in our game, but sadly your browser does not support iframes, which is required for this game.</iframe>
+		<div id="gamecontainer">
+			<iframe src="https://cthulhucreates.github.io/potential/"	frameborder="0" scrolling="no" name="GameFrame"  width="100%" height="100%">Thanks for your interest in our game, but sadly your browser does not support iframes, which is required for this game.</iframe>
 		</div>
 		
       </div>	  
       <a href="{{ with .Site.Params.game.buttondest }}{{ . }}{{ end }}" class="goto-next scrolly">{{ with .Site.Params.game.buttontext }}{{ . | markdownify }}{{ end }}</a>
     </div>
-  </section>
-
-  
-
-  
+  </section>  

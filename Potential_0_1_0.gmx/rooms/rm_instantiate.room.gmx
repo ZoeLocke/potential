@@ -11,6 +11,7 @@
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
   <code>global.piece_active = false;
+global.version = "1.0.1";
 
 global.entropyTypes[0] = "Full"
 global.entropyTypes[1] = "Sides"

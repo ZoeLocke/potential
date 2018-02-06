@@ -23,6 +23,7 @@
   <fonts name="fonts">
     <font>fonts\fnt_arialLarge</font>
     <font>fonts\fnt_arialSmall</font>
+    <font>fonts\fnt_arialXSmall</font>
   </fonts>
   <objects name="objects">
     <objects name="controls">
@@ -37,6 +38,7 @@
     <objects name="gameObjects">
       <object>objects\obj_board</object>
       <object>objects\obj_piece</object>
+      <object>objects\obj_version</object>
     </objects>
   </objects>
   <rooms name="rooms">

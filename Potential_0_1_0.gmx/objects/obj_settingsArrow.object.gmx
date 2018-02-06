@@ -107,43 +107,62 @@ alarm[0] = 2;
 
 //Change value depending on button pressed and value type
 var inst = instance_position(x, y, obj_settingsControl);
+var condition = effect + " " + global.settings[inst.settingType,0];
 
-if(effect = "increment") {
-    if(global.settings[inst.settingType,0] = "Max Charge") {
+    switch(condition){
+        case("increment Max Charge"):
         
-        if(global.settings[0,1] &lt; 8) {
-            global.settings[0,1]++;
-        } else {
-            global.settings[0,1] = 2;
-        }
-    
-    } else if(global.settings[inst.settingType,0] = "Entropy Type") {
-        
-        if(global.settings[1,1] &lt; array_length_1d(global.entropyTypes)-1) {
-            global.settings[1,1]++;
-        } else {
-            global.settings[1,1] = 0;
-        }
-    }
-}
+            if(global.settings[0,1] &lt; 8) {
+                global.settings[0,1]++;
+            } else {
+                global.settings[0,1] = 2;
+            }
+            break;
+            
+        case("increment Entropy Type"):
 
-if(effect = "decrement") {
-    if(global.settings[inst.settingType,0] = "Max Charge") {
+            if(global.settings[1,1] &lt; array_length_1d(global.entropyTypes)-1) {
+                global.settings[1,1]++;
+            } else {
+                global.settings[1,1] = 0;
+            }
+            break;
         
-        if(global.settings[0,1] &gt; 2) {
+        case("increment Initial Charge"):
+        
+            if(global.settings[2,1] &lt; global.settings[0,1] - 1) {
+                global.settings[2,1]++;
+            } else {
+                global.settings[2,1] = 1;
+            }
+            break;
+
+        case("decrement Max Charge"):
+            
+            if(global.settings[0,1] &gt; 2) {
             global.settings[0,1]--;
-        } else {
-            global.settings[0,1] = 8;
-        }
-    
-    } else if(global.settings[inst.settingType,0] = "Entropy Type") {
+            } else {
+                global.settings[0,1] = 8;
+            }
+            break;
+         
+        case("decrement Entropy Type"):   
         
-        if(global.settings[1,1] &gt; 0) {
+            if(global.settings[1,1] &gt; 0) {
             global.settings[1,1]--
-        } else {
-            global.settings[1,1] = array_length_1d(global.entropyTypes)-1;
-        }
-    }
+            } else {
+                global.settings[1,1] = array_length_1d(global.entropyTypes)-1;
+            }
+            break;
+            
+        case("decrement Initial Charge"):
+            
+            if(global.settings[2,1] &gt; 1) {
+                global.settings[2,1]--;
+            } else {
+                global.settings[2,1] = global.settings[0,1] - 1;
+            }
+            break;
 }
 
 script_execute(scr_populateBoard);

@@ -103,6 +103,8 @@ if(global.settings[settingType,0] = "Max Charge") {
     draw_text(x, y * 1.07, global.settings[0,1]);
 } else if(global.settings[settingType,0] = "Entropy Type") {
     draw_text(x, y * 1.07, global.entropyTypes[global.settings[1,1]]);
+} else if(global.settings[settingType, 0] = "Initial Charge") {
+    draw_text(x, y * 1.07, global.settings[2,1]);
 }
 </string>
           </argument>

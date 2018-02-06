@@ -43,3 +43,7 @@ for(i = 0; i < 2; i++) {
         }
     }
 }
+
+//Reduce initial charge by 1 if it matches max charge, this is a simple fix to
+// an issue that can arise if the values are chosen in a particular order
+if(global.settings[2,1] == global.settings[0,1]) {global.settings[2,1]--};

@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Set variables, colour, and z index
 image_speed = 0;
-charge = floor(global.settings[0,1] / 2);
+charge = global.settings[2,1];
 active = false;
 colliding = false;
 

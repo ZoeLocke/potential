@@ -116,7 +116,7 @@ if(charge = 0) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Update variables
+            <string>///Update variables, colliding variables ensures pieces can't be put down on top of eachother
 if(place_meeting(x, y, obj_piece)) {colliding = true} else {colliding = false};
 </string>
           </argument>

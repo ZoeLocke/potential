@@ -145,6 +145,8 @@ if(effect = "decrement") {
         }
     }
 }
+
+script_execute(scr_populateBoard);
 </string>
           </argument>
         </arguments>

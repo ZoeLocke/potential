@@ -32,6 +32,7 @@
       <object>objects\obj_settingsArrow</object>
       <object>objects\obj_snapGuide</object>
       <object>objects\obj_resetButton</object>
+      <object>objects\obj_test</object>
     </objects>
     <objects name="gameObjects">
       <object>objects\obj_board</object>

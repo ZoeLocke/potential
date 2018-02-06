@@ -13,7 +13,7 @@
   <code>instance_create(room_width / 2, room_height / 2.5 , obj_board);
 script_execute(scr_populateBoard);
 draw_clear_alpha(c_white, 0);
-//script_execute(scr_populateSettings);</code>
+script_execute(scr_populateSettings);</code>
   <enableViews>0</enableViews>
   <clearViewBackground>0</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

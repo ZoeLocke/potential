@@ -51,7 +51,11 @@ div.container {
 .image:before {
 			background: url("");
 		}
-
+img.illustration {
+	width: 50%;
+	height: auto;
+}
+		
 .image.fit {
 	background-color: none;
 	margin-left: auto;

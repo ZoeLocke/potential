@@ -1,0 +1,3 @@
+Have controller assign a global variable for setting to each setting text
+have the label take that variable from the closest setting text
+Have the buttons effect global variables based on closest setting text

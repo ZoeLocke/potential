@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Set up variable
-label = "";
+settingValue = 0;
 </string>
           </argument>
         </arguments>
@@ -49,13 +49,13 @@ label = "";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw build number
-draw_set_halign(fa_right);
-draw_set_valign(fa_bottom);
+            <string>///Draw setting value
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
 draw_set_color(c_black);
-draw_set_font(fnt_smallPrint);
+draw_set_font(fnt_setting);
 
-draw_text(x, y, label);
+draw_text(x, y, settingValue);
 </string>
           </argument>
         </arguments>

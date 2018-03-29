@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>spr_settingMask</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -26,9 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>///Set up variable
-//Set to not show holding sprite
-image_speed = 0;
-image_index = 1;
 settingValue = 0;
 </string>
           </argument>

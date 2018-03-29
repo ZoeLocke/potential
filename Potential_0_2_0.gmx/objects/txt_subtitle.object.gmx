@@ -26,10 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Set up variable
-//Set to not show holding sprite
-image_speed = 0;
-image_index = 1;
-subtitle = global.subtitle;
+subtitle = "";
 </string>
           </argument>
         </arguments>

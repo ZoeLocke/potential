@@ -26,11 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///Set up variable
-//Set to not show holding sprite
-image_speed = 0;
-image_index = 1;
-copyright = "Copyright Cuddly Cthulhu Creatives " + global.buildYear + "#All rights reserved";
-buildNumber = "Potentital - " + global.buildNumber;
+copyright = "";
+buildNumber = "";
 </string>
           </argument>
         </arguments>

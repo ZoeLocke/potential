@@ -25,6 +25,7 @@
       <sprite>sprites\spr_startButton</sprite>
       <sprite>sprites\spr_arrowLeft</sprite>
       <sprite>sprites\spr_arrowRight</sprite>
+      <sprite>sprites\spr_settingMask</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -46,7 +47,6 @@
     </objects>
     <objects name="Game">
       <objects name="Text">
-        <object>objects\txt_setting</object>
         <object>objects\txt_label</object>
         <object>objects\txt_smallPrint</object>
         <object>objects\txt_buildNumber</object>
@@ -62,6 +62,11 @@
         <object>objects\obj_startButton</object>
         <object>objects\obj_logo</object>
       </objects>
+    </objects>
+    <objects name="Settings">
+      <object>objects\set_maxCharge</object>
+      <object>objects\set_initCharge</object>
+      <object>objects\set_boardType</object>
     </objects>
   </objects>
   <rooms name="rooms">

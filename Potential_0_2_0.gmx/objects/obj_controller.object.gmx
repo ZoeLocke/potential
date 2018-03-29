@@ -25,22 +25,36 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Set up global variables
+            <string>/// Initialise variables and objects
 
 //---Game setup---
-global.setting[0,0] = "Max Charge";
-global.setting[0,1] = 6;
-global.setting[1,0] = "Initial Charge";
-global.setting[1,1] = floor(global.setting[0,1] / 2);
-global.setting[2,0] = "Entropy Type";
-global.setting[2,1] = "Full";
+boardTypes[0] = spr_boardFullEntropy;
+boardTypes[1] = spr_boardEndsEntropy;
+boardTypes[2] = spr_boardSidesEntropy;
+
+setting[0,0] = "Initial Charge";
+setting[0,1] = 4;
+setting[1,0] = "Max Charge";
+setting[1,1] = 6;
+setting[2,0] = "Entropy Type";
+setting[2,1] = "Full";
+
+minMaxCharge = 4;
+minInitCharge = 2;
+
+maxMaxCharge = 8;
+maxInitCharge = 6;
+
+//---Input variables---
+//---Variables---
+activeButton = noone;
 
 //---Meta---
-global.buildNumber = "0.2.0";
-global.buildYear = string(current_year);
+buildNumber = "0.2.0";
+buildYear = string(current_year);
 
 //---Display---
-global.subtitle = "The abstract strategy game of charged particles.";
+subtitle = "The abstract strategy game of charged particles.";
 clickDelay = 5;
 
 //  Set up display functions
@@ -51,59 +65,9 @@ height = base_height;
 
 //  Use this function to clean up anti aliasing
 display_reset(4, false);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Populate settings
 
-if(room == rm_start){
-    //  Loop through settings text objects and create labels with their respective setting names
-    var i;
-    for(i = 0; i &lt; instance_number(txt_setting); i++){
-        with(instance_find(txt_setting, i)){
-            var label = instance_create(x, y - 128, txt_label);
-            label.labelText = global.setting[i,0];    
-        };
-    };
-};
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// proceed after initialising variables and key objects
+//---End---
+// proceed after initialising variables and key objects
 if(room == rm_init) room_goto(rm_start);
 </string>
           </argument>
@@ -152,7 +116,7 @@ room_goto(rm_game);
           <argument>
             <kind>1</kind>
             <string>/// Restore start button
-obj_startButton.y -= 5;
+activeButton.y -= 5;
 </string>
           </argument>
         </arguments>
@@ -175,42 +139,45 @@ obj_startButton.y -= 5;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Scale room
+            <string>/// Step actions
+
+//---Display---
+//  Scale room
 if (browser_width != width || browser_height != height){
     width = min(base_width, browser_width);
     height = min(base_height, browser_height);
     scr_scaleCanvas(base_width, base_height, width, height, true);
 };
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Inputs
+
+//  Display meta and subtitle
+txt_smallPrint.copyright = "Copyright Cuddly Cthulhu Creatives " + buildYear + "#All rights reserved";
+txt_smallPrint.buildNumber = "Potentital - " + buildNumber;
+txt_subtitle.subtitle = subtitle;
+
+//---Settings---
+if(room == rm_start){
+//  Labels
+    var i;
+    for(i = 0; i &lt; 3; i++){
+        var label = instance_find(txt_label, i);
+        label.labelText = setting[i,0];
+    };
+    if(setting[0,1] &gt; setting[1,1]) set_initCharge.settingValue = setting[1,1] - 1 else set_initCharge.settingValue = setting[0,1];
+    set_maxCharge.settingValue = setting[1,1];
+    set_boardType.settingValue = setting[2,1];    
+};
 
 
+
+//---Inputs---
 
 //  Interactions in start room
 if(room == rm_start){
-    //  Interactions with start button
+    
+    //---Interactions with start button---
     if(place_meeting(mouse_x, mouse_y, obj_startButton)){
         //  Set on-hover sprite for button
-        obj_startButton.image_index = 0;
+        obj_startButton.image_index = 1;
         
         //  depress button
         if(mouse_check_button_pressed(mb_left)){
@@ -219,71 +186,63 @@ if(room == rm_start){
         
         //raise button, then wait clickDelay frames before proceeding
         if(mouse_check_button_released(mb_left)){
+            activeButton = obj_startButton;
             alarm_set(0, floor(clickDelay / 2));
             alarm_set(1, clickDelay);
         };
     }else{
-        obj_startButton.image_index = 1;
-    };
+        obj_startButton.image_index = 0;
+    }; 
     
-    //  Interactions with settings buttons (right)
-    if(place_meeting(mouse_x, mouse_y, obj_arrowRight)){
-        var button = instance_place(mouse_x, mouse_y, obj_arrowRight);
-        button.image_index = 1;
+    //---Interactions with settings buttons---
+    
+    //  When mouse is over any arrow, change that arrow's image index, 
+    //      if mouse it not over any arrow, reset the image index of all arrows
+    var arrowLeft = instance_place(mouse_x, mouse_y, obj_arrowLeft);
+    if(arrowLeft != noone){
+        //  Set on-hover sprite for button
+        arrowLeft.image_index = 1;
+        
+        //  depress button
+        if(mouse_check_button_pressed(mb_left)){
+            arrowLeft.y += 5;
+        };
+        
+        //  raise button  and adjust value
         if(mouse_check_button_released(mb_left)){
-            if(global.setting[instance_number(obj_arrowRight),0] == "Max Charge" &amp;&amp; global.setting[instance_number(obj_arrowRight),1] == 8){
-                global.setting[instance_number(obj_arrowRight),1] = 4;
-            }else{
-                global.setting[instance_number(obj_arrowRight),1]++;
+            activeButton = arrowLeft;
+            alarm_set(0, floor(clickDelay / 2));
+            
+            //  Set max charge
+            if(place_meeting(arrowLeft.x + 160, arrowLeft.y, set_initCharge)){
+                if(setting[0,1] &gt; minInitCharge){
+                    setting[0,1]--;
+                }else{
+                setting[0,1] = maxInitCharge;
+                };
+            };
+            
+            //  Set init charge
+            if(place_meeting(arrowLeft.x + 160, arrowLeft.y, set_maxCharge)){
+                if(setting[1,1] &gt; minMaxCharge){
+                    setting[1,1]--;
+                    }else{
+                        setting[1,1] = maxMaxCharge;
+                    };
+            };
+            
+            //  Set board type
+            if(place_meeting(arrowLeft.x + 160, arrowLeft.y, set_boardType)){
+                
             };
         };
-    }else{
-        with(obj_arrowRight) image_index = 0;
-    };
-        
-    //  Interactions with settings buttons (left)
-    if(place_meeting(mouse_x, mouse_y, obj_arrowLeft)){
-        var button = instance_place(mouse_x, mouse_y, obj_arrowLeft);
-        button.image_index = 1;
     }else{
         with(obj_arrowLeft) image_index = 0;
     };
     
+    
 };
 
-
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Display Settings
-if(room == rm_start){
-    //  Loop through settings text objects in room and set their respective values
-    var i;
-    for(i = 0; i &lt; instance_number(txt_setting); i++){
-        with(instance_find(txt_setting, i)){
-            settingValue = global.setting[i,1];
-        };
-    };
-};
 </string>
           </argument>
         </arguments>

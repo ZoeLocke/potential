@@ -27,7 +27,6 @@
             <kind>1</kind>
             <string>/// Set speed to 0, and define variables
 image_speed = 0;
-inputState = "inactive";
 </string>
           </argument>
         </arguments>
@@ -51,19 +50,7 @@ inputState = "inactive";
           <argument>
             <kind>1</kind>
             <string>/// Draw button
-
 draw_self();
-
-
-//  Reset draw to default state when inactive
-if(inputState == "inactive"){
-    image_index = 0;
-};
-
-//  Change color on click and hover
-if(inputState == "active"){
-    image_index = 1;
-};
 
 //  Draw text
 ///Draw play button text

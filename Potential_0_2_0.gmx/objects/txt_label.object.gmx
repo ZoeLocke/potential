@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>self</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -29,7 +29,7 @@
 //Set to not show holding sprite
 image_speed = 0;
 image_index = 1;
-label = "default";
+labelText = "default";
 </string>
           </argument>
         </arguments>
@@ -58,7 +58,7 @@ draw_set_valign(fa_middle);
 draw_set_color(c_black);
 draw_set_font(fnt_label);
 
-draw_text(x, y, label);
+draw_text(x, y, labelText);
 </string>
           </argument>
         </arguments>

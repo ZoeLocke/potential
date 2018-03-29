@@ -43,11 +43,9 @@
     <objects name="System">
       <object>objects\obj_controller</object>
       <object>objects\obj_debug</object>
-      <object>objects\obj_textParent</object>
     </objects>
     <objects name="Game">
       <objects name="Text">
-        <object>objects\txt_charge</object>
         <object>objects\txt_setting</object>
         <object>objects\txt_label</object>
         <object>objects\txt_smallPrint</object>

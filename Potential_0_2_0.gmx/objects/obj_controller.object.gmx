@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>0</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -28,9 +28,12 @@
             <string>/// Set up global variables
 
 //---Game setup---
-global.maxCharge = 6;
-global.initCharge = floor(global.maxCharge / 2);
-global.entropyType = "Full";
+global.setting[0,0] = "Max Charge";
+global.setting[0,1] = 6;
+global.setting[1,0] = "Initial Charge";
+global.setting[1,1] = floor(global.setting[0,1] / 2);
+global.setting[2,0] = "Entropy Type";
+global.setting[2,1] = "Full";
 
 //---Meta---
 global.buildNumber = "0.2.0";
@@ -47,7 +50,7 @@ width = base_width;
 height = base_height;
 
 //  Use this function to clean up anti aliasing
-if(room == rm_start) display_reset(4, false);
+display_reset(4, false);
 </string>
           </argument>
         </arguments>
@@ -68,13 +71,18 @@ if(room == rm_start) display_reset(4, false);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Set up display functions
-base_width = room_width;
-base_height = room_height;
-width = base_width;
-height = base_height;
-//  Use this function to clean up anti aliasing
-if(room == rm_start) display_reset(4, false);
+            <string>/// Populate settings
+
+if(room == rm_start){
+    //  Loop through settings text objects and create labels with their respective setting names
+    var i;
+    for(i = 0; i &lt; instance_number(txt_setting); i++){
+        with(instance_find(txt_setting, i)){
+            var label = instance_create(x, y - 128, txt_label);
+            label.labelText = global.setting[i,0];    
+        };
+    };
+};
 </string>
           </argument>
         </arguments>
@@ -193,18 +201,59 @@ if (browser_width != width || browser_height != height){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*
-/// Update settings display
-var i;
-var setting;
-setting[0] = global.maxCharge;
-setting[1] = global.initCharge;
-setting[2] = global.entropyType;
+            <string>/// Inputs
 
-for(i = 0; i &lt; instance_number(obj_setting); i++){
-    with(instance_find(obj_setting, i){
+
+
+//  Interactions in start room
+if(room == rm_start){
+    //  Interactions with start button
+    if(place_meeting(mouse_x, mouse_y, obj_startButton)){
+        //  Set on-hover sprite for button
+        obj_startButton.image_index = 0;
+        
+        //  depress button
+        if(mouse_check_button_pressed(mb_left)){
+            obj_startButton.y += 5;
+        };
+        
+        //raise button, then wait clickDelay frames before proceeding
+        if(mouse_check_button_released(mb_left)){
+            alarm_set(0, floor(clickDelay / 2));
+            alarm_set(1, clickDelay);
+        };
+    }else{
+        obj_startButton.image_index = 1;
+    };
+    
+    //  Interactions with settings buttons (right)
+    if(place_meeting(mouse_x, mouse_y, obj_arrowRight)){
+        var button = instance_place(mouse_x, mouse_y, obj_arrowRight);
+        button.image_index = 1;
+        if(mouse_check_button_released(mb_left)){
+            if(global.setting[instance_number(obj_arrowRight),0] == "Max Charge" &amp;&amp; global.setting[instance_number(obj_arrowRight),1] == 8){
+                global.setting[instance_number(obj_arrowRight),1] = 4;
+            }else{
+                global.setting[instance_number(obj_arrowRight),1]++;
+            };
+        };
+    }else{
+        with(obj_arrowRight) image_index = 0;
+    };
+        
+    //  Interactions with settings buttons (left)
+    if(place_meeting(mouse_x, mouse_y, obj_arrowLeft)){
+        var button = instance_place(mouse_x, mouse_y, obj_arrowLeft);
+        button.image_index = 1;
+    }else{
+        with(obj_arrowLeft) image_index = 0;
+    };
+    
 };
-*/
+
+
+
+
 </string>
           </argument>
         </arguments>
@@ -225,29 +274,14 @@ for(i = 0; i &lt; instance_number(obj_setting); i++){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Inputs
-
-
-
-//  Interactions in start room
-if(room == rm_start){    
-    //  Interactions with start button
-    if(place_meeting(mouse_x, mouse_y, obj_startButton)){
-        //  Set on-hover sprite for button
-        obj_startButton.inputState = "active";
-        
-        //  depress button
-        if(mouse_check_button_pressed(mb_left)){
-            obj_startButton.y += 5;
+            <string>///Display Settings
+if(room == rm_start){
+    //  Loop through settings text objects in room and set their respective values
+    var i;
+    for(i = 0; i &lt; instance_number(txt_setting); i++){
+        with(instance_find(txt_setting, i)){
+            settingValue = global.setting[i,1];
         };
-        
-        //raise button, then wait clickDelay frames before proceeding
-        if(mouse_check_button_released(mb_left)){
-            alarm_set(0, floor(clickDelay / 2));
-            alarm_set(1, clickDelay);
-        };
-    }else{
-        obj_startButton.inputState = "inactive"
     };
 };
 </string>

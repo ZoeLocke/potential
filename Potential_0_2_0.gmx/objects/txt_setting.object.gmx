@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>self</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -29,8 +29,7 @@
 //Set to not show holding sprite
 image_speed = 0;
 image_index = 1;
-
-settingValue = "Max Charge";
+settingValue = 0;
 </string>
           </argument>
         </arguments>

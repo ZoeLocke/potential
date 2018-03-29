@@ -13,7 +13,7 @@
    height="100mm"
    width="100mm"
    sodipodi:docname="Assets.svg"
-   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -27,9 +27,9 @@
      inkscape:window-height="1377"
      id="namedview194"
      showgrid="false"
-     inkscape:zoom="0.22076463"
-     inkscape:cx="1127.0088"
-     inkscape:cy="822.68245"
+     inkscape:zoom="0.15610417"
+     inkscape:cx="2246.7143"
+     inkscape:cy="282.89996"
      inkscape:window-x="-8"
      inkscape:window-y="32"
      inkscape:window-maximized="1"
@@ -55,7 +55,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -4909,6 +4909,26 @@
      transform="matrix(0.0803493,0,0,0.05993797,676.91198,-581.60324)"
      inkscape:transform-center-x="-4.3903079e-006"
      inkscape:transform-center-y="-2.2048682"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <rect
+     style="opacity:1;vector-effect:none;fill:#4a4a4a;fill-opacity:1;fill-rule:nonzero;stroke:#333333;stroke-width:0.01791942;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+     id="rect812"
+     width="84.64875"
+     height="16.915415"
+     x="446.61444"
+     y="-594.76917"
+     ry="1.8986191"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <rect
+     ry="1.8986191"
+     y="-561.12933"
+     x="445.008"
+     height="16.915415"
+     width="84.64875"
+     id="rect814"
+     style="opacity:1;vector-effect:none;fill:#a4a4a4;fill-opacity:1;fill-rule:nonzero;stroke:#333333;stroke-width:0.01791942;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
 </svg>

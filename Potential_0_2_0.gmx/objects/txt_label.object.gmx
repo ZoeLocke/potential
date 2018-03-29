@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_textParent</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,7 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>///Set up variable
-charge = 0;
+//Set to not show holding sprite
+image_speed = 0;
+image_index = 1;
+label = "default";
 </string>
           </argument>
         </arguments>
@@ -49,13 +52,13 @@ charge = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw charge
+            <string>///Draw setting value
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_color(c_black);
-draw_set_font(fnt_charge);
+draw_set_font(fnt_label);
 
-draw_text(x, y, charge);
+draw_text(x, y, label);
 </string>
           </argument>
         </arguments>

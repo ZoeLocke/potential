@@ -6,8 +6,7 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_arrowRight</sprite>
-    <sprite>sprites\spr_arrowLeft</sprite>
+    <sprite>sprites\spr_logo</sprite>
     <sprites name="Boards">
       <sprite>sprites\spr_boardFullEntropy</sprite>
       <sprite>sprites\spr_boardEndsEntropy</sprite>
@@ -21,6 +20,11 @@
       <sprite>sprites\spr_controller</sprite>
       <sprite>sprites\spr_debug</sprite>
       <sprite>sprites\spr_text</sprite>
+    </sprites>
+    <sprites name="Buttons">
+      <sprite>sprites\spr_startButton</sprite>
+      <sprite>sprites\spr_arrowLeft</sprite>
+      <sprite>sprites\spr_arrowRight</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -43,11 +47,13 @@
     </objects>
     <objects name="Game">
       <objects name="Text">
-        <object>objects\obj_charge</object>
-        <object>objects\obj_setting</object>
-        <object>objects\obj_label</object>
-        <object>objects\obj_copyright</object>
-        <object>objects\obj_buildNumber</object>
+        <object>objects\txt_charge</object>
+        <object>objects\txt_setting</object>
+        <object>objects\txt_label</object>
+        <object>objects\txt_smallPrint</object>
+        <object>objects\txt_buildNumber</object>
+        <object>objects\txt_subtitle</object>
+        <object>objects\txt_playButton</object>
       </objects>
       <objects name="Components">
         <object>objects\obj_arrowRight</object>
@@ -55,11 +61,13 @@
         <object>objects\obj_board</object>
         <object>objects\obj_pieceBlue</object>
         <object>objects\obj_pieceRed</object>
+        <object>objects\obj_startButton</object>
+        <object>objects\obj_logo</object>
       </objects>
     </objects>
   </objects>
-  <timelines name="timelines"/>
   <rooms name="rooms">
+    <room>rooms\rm_init</room>
     <room>rooms\rm_start</room>
     <room>rooms\rm_game</room>
   </rooms>

@@ -4,8 +4,8 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
-  <parentName>obj_textParent</parentName>
+  <persistent>-1</persistent>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,7 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>///Set up variable
-label = "Copyright Cuddly Cthulhu Creatives 2018#All rights reserved";
+//Set to not show holding sprite
+image_speed = 0;
+image_index = 1;
+copyright = "Copyright Cuddly Cthulhu Creatives " + global.buildYear + "#All rights reserved";
+buildNumber = "Potentital - " + global.buildNumber;
 </string>
           </argument>
         </arguments>
@@ -50,12 +54,18 @@ label = "Copyright Cuddly Cthulhu Creatives 2018#All rights reserved";
           <argument>
             <kind>1</kind>
             <string>///Draw copyright data
-draw_set_halign(fa_left);
-draw_set_valign(fa_bottom);
+draw_set_valign(fa_top);
 draw_set_color(c_black);
 draw_set_font(fnt_smallPrint);
 
-draw_text(x, y, label);
+//If text is on the right, show the build number, if it's on the left show the copyright
+if(x &gt; room_width / 2){
+    draw_set_halign(fa_right);
+    draw_text(x, y, buildNumber);
+}else{
+    draw_set_halign(fa_left);
+    draw_text(x, y, copyright);
+};
 </string>
           </argument>
         </arguments>

@@ -25,10 +25,29 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Set up global variables
+            <string>/// Set up global variables
+
+//---Game setup---
 global.maxCharge = 6;
 global.initCharge = floor(global.maxCharge / 2);
 global.entropyType = "Full";
+
+//---Meta---
+global.buildNumber = "0.2.0";
+global.buildYear = string(current_year);
+
+//---Display---
+global.subtitle = "The abstract strategy game of charged particles.";
+clickDelay = 5;
+
+//  Set up display functions
+base_width = room_width;
+base_height = room_height;
+width = base_width;
+height = base_height;
+
+//  Use this function to clean up anti aliasing
+if(room == rm_start) display_reset(4, false);
 </string>
           </argument>
         </arguments>
@@ -54,8 +73,183 @@ base_width = room_width;
 base_height = room_height;
 width = base_width;
 height = base_height;
-
+//  Use this function to clean up anti aliasing
 if(room == rm_start) display_reset(4, false);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// proceed after initialising variables and key objects
+if(room == rm_init) room_goto(rm_start);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///  Start game
+room_goto(rm_game);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Restore start button
+obj_startButton.y -= 5;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Scale room
+if (browser_width != width || browser_height != height){
+    width = min(base_width, browser_width);
+    height = min(base_height, browser_height);
+    scr_scaleCanvas(base_width, base_height, width, height, true);
+};
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/*
+/// Update settings display
+var i;
+var setting;
+setting[0] = global.maxCharge;
+setting[1] = global.initCharge;
+setting[2] = global.entropyType;
+
+for(i = 0; i &lt; instance_number(obj_setting); i++){
+    with(instance_find(obj_setting, i){
+};
+*/
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Inputs
+
+
+
+//  Interactions in start room
+if(room == rm_start){    
+    //  Interactions with start button
+    if(place_meeting(mouse_x, mouse_y, obj_startButton)){
+        //  Set on-hover sprite for button
+        obj_startButton.inputState = "active";
+        
+        //  depress button
+        if(mouse_check_button_pressed(mb_left)){
+            obj_startButton.y += 5;
+        };
+        
+        //raise button, then wait clickDelay frames before proceeding
+        if(mouse_check_button_released(mb_left)){
+            alarm_set(0, floor(clickDelay / 2));
+            alarm_set(1, clickDelay);
+        };
+    }else{
+        obj_startButton.inputState = "inactive"
+    };
+};
 </string>
           </argument>
         </arguments>

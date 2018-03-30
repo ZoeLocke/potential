@@ -26,8 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Set up variable
-copyright = "";
-buildNumber = "";
+smallPrintValue = "";
 </string>
           </argument>
         </arguments>
@@ -50,18 +49,18 @@ buildNumber = "";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw copyright data
+            <string>///Draw small print data
 draw_set_valign(fa_top);
 draw_set_color(c_black);
 draw_set_font(fnt_smallPrint);
 
-//If text is on the right, show the build number, if it's on the left show the copyright
+//  Draw text, alignment based on position on screen
 if(x &gt; room_width / 2){
     draw_set_halign(fa_right);
-    draw_text(x, y, buildNumber);
+    draw_text(x, y, smallPrintValue);
 }else{
     draw_set_halign(fa_left);
-    draw_text(x, y, copyright);
+    draw_text(x, y, smallPrintValue);
 };
 </string>
           </argument>

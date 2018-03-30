@@ -36,20 +36,23 @@ ds_map_add(boardTypeSprites, "Full" ,spr_boardFullEntropy);
 ds_map_add(boardTypeSprites, "Ends" ,spr_boardEndsEntropy);
 ds_map_add(boardTypeSprites, "Sides" ,spr_boardSidesEntropy);
 
+settingsList = ds_map_create();
+ds_map_add(settingsList, "Initial Charge", 2);
+ds_map_add(settingsList, "Max Charge", 6);
+ds_map_add(settingsList, "Board Type", "Full");
+
 setting[0,0] = "Initial Charge";
-setting[0,1] = 4;
+setting[0,1] = 2;
 setting[1,0] = "Max Charge";
 setting[1,1] = 6;
 setting[2,0] = "Board Type";
 setting[2,1] = "Full";
-setting[3,0] = "Board Number";
-setting[3,1] = 0;
 
 minMaxCharge = 4;
 minInitCharge = 2;
 
 maxMaxCharge = 8;
-maxInitCharge = 6;
+maxInitCharge = 4;
 
 //---Input variables---
 activeButton = noone;
@@ -57,6 +60,9 @@ activeButton = noone;
 //---Meta---
 buildNumber = "0.2.0";
 buildYear = string(current_year);
+
+build = "Potential - " + buildNumber;
+copyright = "Copyright Cuddly Cthulhu Creative " + buildYear + "#All rights reserved";
 
 //---Display---
 subtitle = "The abstract strategy game of charged particles.";

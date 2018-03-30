@@ -6,17 +6,20 @@ if (browser_width != width || browser_height != height){
 };
 
 var aspect = (base_width / base_height);
-
 if ((width / aspect) > height)window_set_size((height * aspect), height) else window_set_size(width, (width / aspect));
-
 if (resizeWindow) window_center();
-
 surface_resize(application_surface, min(window_get_width(), base_width), min(window_get_height(), base_height));
 
 //  Display meta and subtitle
-if(instance_exists(txt_smallPrint)){
-    txt_smallPrint.copyright = "Copyright Cuddly Cthulhu Creatives " + buildYear + "#All rights reserved";
-    txt_smallPrint.buildNumber = "Potentital - " + buildNumber;
+var i;
+for(i = 0; i < instance_number(txt_smallPrint); i++){
+    with(instance_find(txt_smallPrint, i)){
+        if(x < room_width / 2){
+            smallPrintValue = other.copyright;
+        }else{
+            smallPrintValue = other.build;
+        };
+    };
 };
 
 if(instance_exists(txt_subtitle)) txt_subtitle.subtitle = subtitle;

@@ -45,32 +45,26 @@ if(room == rm_start){
             activeButton = arrowLeft;
             alarm_set(0, floor(clickDelay / 2));
             
-            var parentSetting = instance_nearest(arrowLeft.x + 100, arrowLeft.y, txt_settingText);
+            var parentSetting = instance_nearest(arrowLeft.x + 160, arrowLeft.y, txt_settingText);
             
             //  Set max charge
             if(parentSetting.setting == "Initial Charge"){
-                if(setting[0,1] > minInitCharge){
-                    setting[0,1]--;
-                }else{
-                setting[0,1] = maxInitCharge;
-                };
+                if(setting[0,1] > minInitCharge) setting[0,1]-- ;
             };
             
             //  Set init charge
             if(parentSetting.setting == "Max Charge"){
-                if(setting[1,1] > minMaxCharge){
-                    setting[1,1]--;
-                    }else{
-                        setting[1,1] = maxMaxCharge;
-                    };
+                if(setting[1,1] > minMaxCharge) setting[1,1]-- ;
             };
 
             //  Set board type
             if(parentSetting.setting == "Board Type"){
-                if(setting[3,1] != 0) setting[3,1]-- else setting[3,1] = ds_list_size(boardType) - 1; 
-                setting[2,1] = ds_list_find_value(boardType, setting[3,1]);
+                var currentBoard = ds_list_find_index(boardType, setting[2,1]);
+                
+                if(currentBoard != 0){
+                    setting[2,1] = ds_list_find_value(boardType, currentBoard - 1);
+                };
             };
-
         };
     }else{
         with(obj_arrowLeft) image_index = 0;
@@ -99,26 +93,21 @@ if(room == rm_start){
             
             //  Set max charge
             if(parentSetting.setting == "Initial Charge"){
-                if(setting[0,1] < maxInitCharge){
-                    setting[0,1]++;
-                }else{
-                setting[0,1] = minInitCharge;
-                };
+                if(setting[0,1] < maxInitCharge) setting[0,1]++ ;
             };
             
             //  Set init charge
             if(parentSetting.setting == "Max Charge"){
-                if(setting[1,1] < maxMaxCharge){
-                    setting[1,1]--;
-                    }else{
-                        setting[1,1] = minMaxCharge;
-                    };
+                if(setting[1,1] < maxMaxCharge) setting[1,1]++ ;
             };
 
             //  Set board type
             if(parentSetting.setting == "Board Type"){
-                if(setting[3,1] == 0) setting[3,1]++ else setting[3,1] = 0; 
-                setting[2,1] = ds_list_find_value(boardType, setting[3,1]);
+                var currentBoard = ds_list_find_index(boardType, setting[2,1]);
+                
+                if(currentBoard != ds_list_size(boardType) - 1){
+                    setting[2,1] = ds_list_find_value(boardType, currentBoard + 1);
+                };
             };
 
         };

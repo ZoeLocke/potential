@@ -1,1 +1,3 @@
-Duplicate and modify arrowLeft logic to arrowRight, come up with a tidy way to cycle the boards
+Look at making the inputs code half it's current length by building in conditions on which type of button is being pressed.
+
+Perhaps use a single object and use it's xscale

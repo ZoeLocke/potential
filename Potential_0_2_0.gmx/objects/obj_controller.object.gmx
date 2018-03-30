@@ -46,7 +46,6 @@ maxMaxCharge = 8;
 maxInitCharge = 6;
 
 //---Input variables---
-//---Variables---
 activeButton = noone;
 
 //---Meta---
@@ -150,24 +149,32 @@ if (browser_width != width || browser_height != height){
 };
 
 //  Display meta and subtitle
-txt_smallPrint.copyright = "Copyright Cuddly Cthulhu Creatives " + buildYear + "#All rights reserved";
-txt_smallPrint.buildNumber = "Potentital - " + buildNumber;
-txt_subtitle.subtitle = subtitle;
+if(instance_exists(txt_smallPrint)){
+    txt_smallPrint.copyright = "Copyright Cuddly Cthulhu Creatives " + buildYear + "#All rights reserved";
+    txt_smallPrint.buildNumber = "Potentital - " + buildNumber;
+};
+
+if(instance_exists(txt_subtitle)) txt_subtitle.subtitle = subtitle;
 
 //---Settings---
 if(room == rm_start){
-//  Labels
     var i;
-    for(i = 0; i &lt; 3; i++){
-        var label = instance_find(txt_label, i);
-        label.labelText = setting[i,0];
+    var j;
+
+    //  Loop through all settings text objects and update their settings
+    for(i = 0; i &lt; instance_number(txt_settingText); i++){
+        var settingTextInst = instance_find(txt_settingText, i);
+        settingTextInst.setting = setting[i,0];
+        settingTextInst.settingValue = setting[i,1];
     };
-    if(setting[0,1] &gt; setting[1,1]) set_initCharge.settingValue = setting[1,1] - 1 else set_initCharge.settingValue = setting[0,1];
-    set_maxCharge.settingValue = setting[1,1];
-    set_boardType.settingValue = setting[2,1];    
+
+    //  Loop through all labels and update their values to the settings type of the nearest settings text object
+    for(j = 0; j &lt; instance_number(txt_label); j++){
+        var label = instance_find(txt_label, j);
+        var parentSetting = instance_nearest(label.x, label.y + 128, txt_settingText);
+        label.labelText = parentSetting.setting;
+    };
 };
-
-
 
 //---Inputs---
 
@@ -199,6 +206,8 @@ if(room == rm_start){
     //  When mouse is over any arrow, change that arrow's image index, 
     //      if mouse it not over any arrow, reset the image index of all arrows
     var arrowLeft = instance_place(mouse_x, mouse_y, obj_arrowLeft);
+    
+    //  If an arrow is found
     if(arrowLeft != noone){
         //  Set on-hover sprite for button
         arrowLeft.image_index = 1;
@@ -213,8 +222,10 @@ if(room == rm_start){
             activeButton = arrowLeft;
             alarm_set(0, floor(clickDelay / 2));
             
+            var parentSetting = instance_nearest(arrowLeft.x + 100, arrowLeft.y, txt_settingText);
+            
             //  Set max charge
-            if(place_meeting(arrowLeft.x + 160, arrowLeft.y, set_initCharge)){
+            if(parentSetting.setting == "Initial Charge"){
                 if(setting[0,1] &gt; minInitCharge){
                     setting[0,1]--;
                 }else{
@@ -223,18 +234,19 @@ if(room == rm_start){
             };
             
             //  Set init charge
-            if(place_meeting(arrowLeft.x + 160, arrowLeft.y, set_maxCharge)){
+            if(parentSetting.setting == "Max Charge"){
                 if(setting[1,1] &gt; minMaxCharge){
                     setting[1,1]--;
                     }else{
                         setting[1,1] = maxMaxCharge;
                     };
             };
-            
+
             //  Set board type
-            if(place_meeting(arrowLeft.x + 160, arrowLeft.y, set_boardType)){
+            if(parentSetting.setting == "Board Type"){
                 
             };
+
         };
     }else{
         with(obj_arrowLeft) image_index = 0;

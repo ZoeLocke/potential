@@ -52,6 +52,7 @@
         <object>objects\txt_buildNumber</object>
         <object>objects\txt_subtitle</object>
         <object>objects\txt_playButton</object>
+        <object>objects\txt_settingText</object>
       </objects>
       <objects name="Components">
         <object>objects\obj_arrowRight</object>

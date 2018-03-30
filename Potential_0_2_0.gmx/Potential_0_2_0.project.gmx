@@ -25,6 +25,7 @@
       <sprite>sprites\spr_startButton</sprite>
       <sprite>sprites\spr_arrowLeft</sprite>
       <sprite>sprites\spr_arrowRight</sprite>
+      <sprite>sprites\spr_arrow</sprite>
       <sprite>sprites\spr_settingMask</sprite>
     </sprites>
   </sprites>
@@ -63,6 +64,7 @@
         <object>objects\obj_pieceRed</object>
         <object>objects\obj_startButton</object>
         <object>objects\obj_logo</object>
+        <object>objects\obj_arrow</object>
       </objects>
     </objects>
     <objects name="Settings">

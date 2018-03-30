@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>0</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -28,16 +28,22 @@
             <string>/// Initialise variables and objects
 
 //---Game setup---
-boardTypes[0] = spr_boardFullEntropy;
-boardTypes[1] = spr_boardEndsEntropy;
-boardTypes[2] = spr_boardSidesEntropy;
+boardType = ds_list_create()
+ds_list_add(boardType, "Full", "Ends", "Sides");
+
+boardTypeSprites = ds_map_create()
+ds_map_add(boardTypeSprites, "Full" ,spr_boardFullEntropy);
+ds_map_add(boardTypeSprites, "Ends" ,spr_boardEndsEntropy);
+ds_map_add(boardTypeSprites, "Sides" ,spr_boardSidesEntropy);
 
 setting[0,0] = "Initial Charge";
 setting[0,1] = 4;
 setting[1,0] = "Max Charge";
 setting[1,1] = 6;
-setting[2,0] = "Entropy Type";
+setting[2,0] = "Board Type";
 setting[2,1] = "Full";
+setting[3,0] = "Board Number";
+setting[3,1] = 0;
 
 minMaxCharge = 4;
 minInitCharge = 2;
@@ -61,13 +67,14 @@ base_width = room_width;
 base_height = room_height;
 width = base_width;
 height = base_height;
+resizeWindow = true;
 
 //  Use this function to clean up anti aliasing
 display_reset(4, false);
 
 //---End---
 // proceed after initialising variables and key objects
-if(room == rm_init) room_goto(rm_start);
+room_goto(rm_start);
 </string>
           </argument>
         </arguments>
@@ -140,120 +147,8 @@ activeButton.y -= 5;
             <kind>1</kind>
             <string>/// Step actions
 
-//---Display---
-//  Scale room
-if (browser_width != width || browser_height != height){
-    width = min(base_width, browser_width);
-    height = min(base_height, browser_height);
-    scr_scaleCanvas(base_width, base_height, width, height, true);
-};
-
-//  Display meta and subtitle
-if(instance_exists(txt_smallPrint)){
-    txt_smallPrint.copyright = "Copyright Cuddly Cthulhu Creatives " + buildYear + "#All rights reserved";
-    txt_smallPrint.buildNumber = "Potentital - " + buildNumber;
-};
-
-if(instance_exists(txt_subtitle)) txt_subtitle.subtitle = subtitle;
-
-//---Settings---
-if(room == rm_start){
-    var i;
-    var j;
-
-    //  Loop through all settings text objects and update their settings
-    for(i = 0; i &lt; instance_number(txt_settingText); i++){
-        var settingTextInst = instance_find(txt_settingText, i);
-        settingTextInst.setting = setting[i,0];
-        settingTextInst.settingValue = setting[i,1];
-    };
-
-    //  Loop through all labels and update their values to the settings type of the nearest settings text object
-    for(j = 0; j &lt; instance_number(txt_label); j++){
-        var label = instance_find(txt_label, j);
-        var parentSetting = instance_nearest(label.x, label.y + 128, txt_settingText);
-        label.labelText = parentSetting.setting;
-    };
-};
-
-//---Inputs---
-
-//  Interactions in start room
-if(room == rm_start){
-    
-    //---Interactions with start button---
-    if(place_meeting(mouse_x, mouse_y, obj_startButton)){
-        //  Set on-hover sprite for button
-        obj_startButton.image_index = 1;
-        
-        //  depress button
-        if(mouse_check_button_pressed(mb_left)){
-            obj_startButton.y += 5;
-        };
-        
-        //raise button, then wait clickDelay frames before proceeding
-        if(mouse_check_button_released(mb_left)){
-            activeButton = obj_startButton;
-            alarm_set(0, floor(clickDelay / 2));
-            alarm_set(1, clickDelay);
-        };
-    }else{
-        obj_startButton.image_index = 0;
-    }; 
-    
-    //---Interactions with settings buttons---
-    
-    //  When mouse is over any arrow, change that arrow's image index, 
-    //      if mouse it not over any arrow, reset the image index of all arrows
-    var arrowLeft = instance_place(mouse_x, mouse_y, obj_arrowLeft);
-    
-    //  If an arrow is found
-    if(arrowLeft != noone){
-        //  Set on-hover sprite for button
-        arrowLeft.image_index = 1;
-        
-        //  depress button
-        if(mouse_check_button_pressed(mb_left)){
-            arrowLeft.y += 5;
-        };
-        
-        //  raise button  and adjust value
-        if(mouse_check_button_released(mb_left)){
-            activeButton = arrowLeft;
-            alarm_set(0, floor(clickDelay / 2));
-            
-            var parentSetting = instance_nearest(arrowLeft.x + 100, arrowLeft.y, txt_settingText);
-            
-            //  Set max charge
-            if(parentSetting.setting == "Initial Charge"){
-                if(setting[0,1] &gt; minInitCharge){
-                    setting[0,1]--;
-                }else{
-                setting[0,1] = maxInitCharge;
-                };
-            };
-            
-            //  Set init charge
-            if(parentSetting.setting == "Max Charge"){
-                if(setting[1,1] &gt; minMaxCharge){
-                    setting[1,1]--;
-                    }else{
-                        setting[1,1] = maxMaxCharge;
-                    };
-            };
-
-            //  Set board type
-            if(parentSetting.setting == "Board Type"){
-                
-            };
-
-        };
-    }else{
-        with(obj_arrowLeft) image_index = 0;
-    };
-    
-    
-};
+scr_display();
+scr_input();
 
 </string>
           </argument>

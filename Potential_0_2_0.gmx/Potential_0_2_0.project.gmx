@@ -31,7 +31,8 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\scr_scaleCanvas.gml</script>
+    <script>scripts\scr_display.gml</script>
+    <script>scripts\scr_input.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_debug</font>

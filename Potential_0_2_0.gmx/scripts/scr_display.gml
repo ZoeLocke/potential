@@ -43,3 +43,12 @@ if(room == rm_start){
         label.labelText = parentSetting.setting;
     };
 };
+
+//  Display other controls
+if(room == rm_start) obj_transitionButton.transition = "PLAY";
+if(room == rm_game) obj_transitionButton.transition = "QUIT";
+
+//  Display game objects
+if(room == rm_game){
+    obj_board.sprite_index = ds_map_find_value(boardTypeSprites, setting[2,1]);
+};

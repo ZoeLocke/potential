@@ -67,6 +67,7 @@ copyright = "Copyright Cuddly Cthulhu Creative " + buildYear + "#All rights rese
 //---Display---
 subtitle = "The abstract strategy game of charged particles.";
 clickDelay = 5;
+global.colourMain = make_color_rgb(32, 32, 32);
 
 //  Set up display functions
 base_width = room_width;
@@ -103,8 +104,9 @@ room_goto(rm_start);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///  Start game
-room_goto(rm_game);
+            <string>///  Transition game
+if(obj_transitionButton.transition == "PLAY") room_goto(rm_game);
+if(obj_transitionButton.transition == "QUIT") room_goto(rm_start);
 </string>
           </argument>
         </arguments>

@@ -51,26 +51,18 @@
       <objects name="Text">
         <object>objects\txt_label</object>
         <object>objects\txt_smallPrint</object>
-        <object>objects\txt_buildNumber</object>
         <object>objects\txt_subtitle</object>
-        <object>objects\txt_playButton</object>
+        <object>objects\txt_transitionButton</object>
         <object>objects\txt_settingText</object>
       </objects>
       <objects name="Components">
-        <object>objects\obj_arrowRight</object>
-        <object>objects\obj_arrowLeft</object>
         <object>objects\obj_board</object>
         <object>objects\obj_pieceBlue</object>
         <object>objects\obj_pieceRed</object>
-        <object>objects\obj_startButton</object>
+        <object>objects\obj_transitionButton</object>
         <object>objects\obj_logo</object>
         <object>objects\obj_arrow</object>
       </objects>
-    </objects>
-    <objects name="Settings">
-      <object>objects\set_maxCharge</object>
-      <object>objects\set_initCharge</object>
-      <object>objects\set_boardType</object>
     </objects>
   </objects>
   <rooms name="rooms">

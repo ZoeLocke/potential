@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>/// Set speed to 0, and define variables
 image_speed = 0;
+transition = "PLAY";
 </string>
           </argument>
         </arguments>
@@ -59,7 +60,7 @@ draw_set_valign(fa_middle);
 draw_set_color(c_white);
 draw_set_font(fnt_setting);
 
-draw_text(x, y, "PLAY");
+draw_text(x, y, transition);
 </string>
           </argument>
         </arguments>

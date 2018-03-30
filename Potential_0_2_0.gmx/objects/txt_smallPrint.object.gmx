@@ -51,7 +51,7 @@ smallPrintValue = "";
             <kind>1</kind>
             <string>///Draw small print data
 draw_set_valign(fa_top);
-draw_set_color(c_black);
+draw_set_color(global.colourMain);
 draw_set_font(fnt_smallPrint);
 
 //  Draw text, alignment based on position on screen

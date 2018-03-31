@@ -1,3 +1,5 @@
-Look at making the inputs code half it's current length by building in conditions on which type of button is being pressed.
+draw pieces to grid based on locations in array, use row and col refs to find relevent space on board
 
-Perhaps use a single object and use it's xscale
+in game, search the array for pieces that are around active piece
+
+Consider making start page menu items larger

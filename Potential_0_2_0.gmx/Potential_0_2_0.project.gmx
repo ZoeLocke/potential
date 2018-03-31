@@ -11,10 +11,12 @@
       <sprite>sprites\spr_boardFullEntropy</sprite>
       <sprite>sprites\spr_boardEndsEntropy</sprite>
       <sprite>sprites\spr_boardSidesEntropy</sprite>
+      <sprite>sprites\spr_boardMarker</sprite>
     </sprites>
     <sprites name="Pieces">
       <sprite>sprites\spr_pieceBlue</sprite>
       <sprite>sprites\spr_pieceRed</sprite>
+      <sprite>sprites\spr_piece</sprite>
     </sprites>
     <sprites name="System">
       <sprite>sprites\spr_controller</sprite>
@@ -32,8 +34,12 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\scr_display.gml</script>
+    <script>scripts\scr_displaySetup.gml</script>
     <script>scripts\scr_input.gml</script>
+    <script>scripts\scr_populateBoard.gml</script>
+    <script>scripts\scr_scaleRoom.gml</script>
+    <script>scripts\scr_displayLive.gml</script>
+    <script>scripts\scr_createPiecesTable.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_debug</font>
@@ -52,7 +58,6 @@
         <object>objects\txt_label</object>
         <object>objects\txt_smallPrint</object>
         <object>objects\txt_subtitle</object>
-        <object>objects\txt_transitionButton</object>
         <object>objects\txt_settingText</object>
       </objects>
       <objects name="Components">
@@ -62,6 +67,8 @@
         <object>objects\obj_transitionButton</object>
         <object>objects\obj_logo</object>
         <object>objects\obj_arrow</object>
+        <object>objects\obj_boardMarker</object>
+        <object>objects\obj_piece</object>
       </objects>
     </objects>
   </objects>

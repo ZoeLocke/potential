@@ -1,6 +1,6 @@
 ///scr_populateBoard()
-var startX = 288;
-var startY = 160;
+var startX = obj_board.x;
+var startY = obj_board.y;
 var markerSize = sprite_get_width(spr_boardMarker);
 
 var i;

@@ -30,7 +30,7 @@ image_speed = 0;
 image_index = 1;
 depth = -10000
 
-draw_text(x, y, str);
+str = "";
 </string>
           </argument>
         </arguments>
@@ -59,7 +59,7 @@ draw_set_valign(fa_middle);
 draw_set_color(c_black);
 draw_set_font(fnt_debug);
 
-str = "";
+draw_text_ext(x, y, str, 3, 1000);
 </string>
           </argument>
         </arguments>

@@ -28,18 +28,21 @@
             <string>/// Initialise variables and objects
 
 //---Game setup---
-boardType = ds_list_create()
+boardType = ds_list_create();
 ds_list_add(boardType, "Full", "Ends", "Sides");
 
-boardTypeSprites = ds_map_create()
-ds_map_add(boardTypeSprites, "Full" ,spr_boardFullEntropy);
-ds_map_add(boardTypeSprites, "Ends" ,spr_boardEndsEntropy);
-ds_map_add(boardTypeSprites, "Sides" ,spr_boardSidesEntropy);
+boardTypeSprites = ds_map_create();
+ds_map_add(boardTypeSprites, "Full", spr_boardFullEntropy);
+ds_map_add(boardTypeSprites, "Ends", spr_boardEndsEntropy);
+ds_map_add(boardTypeSprites, "Sides", spr_boardSidesEntropy);
 
 settingsList = ds_map_create();
 ds_map_add(settingsList, "Initial Charge", 2);
 ds_map_add(settingsList, "Max Charge", 6);
 ds_map_add(settingsList, "Board Type", "Full");
+
+pieceConfig = ds_list_create();
+ds_list_add(pieceConfig, "Wave", "Staggered", "Columns");
 
 setting[0,0] = "Initial Charge";
 setting[0,1] = 2;
@@ -47,6 +50,8 @@ setting[1,0] = "Max Charge";
 setting[1,1] = 6;
 setting[2,0] = "Board Type";
 setting[2,1] = "Full";
+setting[3,0] = "Configuration";
+setting[3,1] = "Wave";
 
 minMaxCharge = 4;
 minInitCharge = 2;
@@ -105,7 +110,7 @@ room_goto(rm_start);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///  Transition game
+            <string>///  Transitions
 if(obj_transitionButton.transition == "PLAY") room_goto(rm_game);
 if(obj_transitionButton.transition == "QUIT") room_goto(rm_start);
 </string>
@@ -130,7 +135,7 @@ if(obj_transitionButton.transition == "QUIT") room_goto(rm_start);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Restore start button
+            <string>/// Restore clicked button
 activeButton.y -= 5;
 </string>
           </argument>
@@ -159,6 +164,8 @@ scr_displayLive();
 scr_scaleRoom();
 scr_input();
 
+
+
 </string>
           </argument>
         </arguments>
@@ -184,7 +191,8 @@ scr_input();
             <string>/// On start of room scripts
 scr_displaySetup();
 if(room == rm_game){
-    scr_createPiecesTable(); 
+
+    scr_buildPieceTable();
     scr_populateBoard();   
 };
 </string>

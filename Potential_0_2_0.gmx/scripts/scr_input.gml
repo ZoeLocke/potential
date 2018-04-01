@@ -84,6 +84,20 @@ if(room == rm_start){
                     break;
                 };
             };
+            
+            //  Set onfiguration
+            if(parentSetting.setting == "Configuration"){
+                var currentConfig = ds_list_find_index(pieceConfig, setting[3,1])
+                
+                switch(sign(arrow.image_xscale)){
+                    case -1:
+                    if(currentConfig != 0) setting[3,1] = ds_list_find_value(pieceConfig, currentConfig - 1);
+                    break;
+                    case 1:
+                    if(currentConfig != ds_list_size(pieceConfig) - 1) setting[3,1] = ds_list_find_value(pieceConfig, currentConfig + 1);
+                    break;
+                };
+            };
         };
     }else{
         with(obj_arrow) image_index = 0;

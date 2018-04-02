@@ -9,16 +9,19 @@ for(i = 0; i < 8; i++) ds_grid_set(configs, 0, i, "A" + i);
 
 for(i = 0; i < 8; i++) ds_grid_set(configs, 0, i + 8, "B" + i);
 
-//  Populate rows
-ds_grid_set_region(configs, 1, 0, 1, 3, 1);
-ds_grid_set_region(configs, 1, 4, 1, 7, 2);
+//  Populate rows and columns
+for(i = 1; i < 8; i++){
+    var row;
+    if(sign(i) == -1) row = 1 else row = 2;
+    
+    ds_grid_set(configs, row, i, i);
+    ds_grid_set(configs, row, i, row);
+};
 
-ds_grid_set_region(configs, 1, 8, 1, 11, 7);
-ds_grid_set_region(configs, 1, 12, 1, 15, 8);
-
-//  Populate columns
-for(i = 1; i < 4; i += 2) ds_grid_set(configs, 2, i, i);
-for(i = 2; i < 5; i += 2) ds_grid_set(configs, 2, i, i);
-
-for(i = 1; i < 4; i += 2) ds_grid_set(configs, 2, i, i);
-for(i = 1; i < 4; i += 2) ds_grid_set(configs, 2, i, i);
+for(i = 1; i < 8; i++){
+    var row;
+    if(sign(i) == -1) row = 8 else row = 7;
+    
+    ds_grid_set(configs, row, i + 8, i);
+    ds_grid_set(configs, row, i + 8, row);
+};

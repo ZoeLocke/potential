@@ -191,7 +191,7 @@ scr_input();
             <string>/// On start of room scripts
 scr_displaySetup();
 if(room == rm_game){
-
+    scr_buildConfigsTable();
     scr_buildPieceTable();
     scr_populateBoard();   
 };

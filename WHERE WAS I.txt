@@ -1,5 +1,7 @@
-draw pieces to grid based on locations in array, use row and col refs to find relevent space on board
+Fix piece being set out of place
 
-in game, search the array for pieces that are around active piece
+Move config logic into populate script
 
-Consider making start page menu items larger
+Make row/column settings programatic
+
+Fix image index and charge not being set

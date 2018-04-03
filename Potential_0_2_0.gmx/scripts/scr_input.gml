@@ -51,10 +51,10 @@ if(room == rm_start){
             if(parentSetting.setting == "Initial Charge"){
                 switch(sign(arrow.image_xscale)){
                     case -1:
-                    if(setting[0,1] > minInitCharge) setting[0,1]-- ;
+                    if(setting[0,1] > minInitCharge) setting[0,1]-- else setting[0,1] = maxInitCharge;
                     break;
                     case 1:
-                    if(setting[0,1] < maxInitCharge) setting[0,1]++ ;
+                    if(setting[0,1] < maxInitCharge) setting[0,1]++ else setting[0,1] = minInitCharge;
                     break;
                 };
             };
@@ -63,10 +63,10 @@ if(room == rm_start){
             if(parentSetting.setting == "Max Charge"){
                 switch(sign(arrow.image_xscale)){
                     case -1:
-                    if(setting[1,1] > minMaxCharge) setting[1,1]-- ;
+                    if(setting[1,1] > minMaxCharge) setting[1,1]-- else setting[1,1] = maxMaxCharge;
                     break;
                     case 1:
-                    if(setting[1,1] < maxMaxCharge) setting[1,1]++ ;
+                    if(setting[1,1] < maxMaxCharge) setting[1,1]++ else setting[1,1] = minMaxCharge;
                     break;
                 };
             };
@@ -77,10 +77,18 @@ if(room == rm_start){
                 
                 switch(sign(arrow.image_xscale)){
                     case -1:
-                    if(currentBoard != 0) setting[2,1] = ds_list_find_value(boardType, currentBoard - 1);
+                    if(currentBoard != 0){
+                        setting[2,1] = ds_list_find_value(boardType, currentBoard - 1)
+                    }else{
+                        setting[2,1] = ds_list_find_value(boardType, ds_list_size(boardType) - 1);
+                    };
                     break;
                     case 1:
-                    if(currentBoard != ds_list_size(boardType) - 1) setting[2,1] = ds_list_find_value(boardType, currentBoard + 1);
+                    if(currentBoard != ds_list_size(boardType) - 1){
+                        setting[2,1] = ds_list_find_value(boardType, currentBoard + 1);
+                    }else{
+                        setting[2,1] = ds_list_find_value(boardType, 0);
+                    };
                     break;
                 };
             };
@@ -91,10 +99,18 @@ if(room == rm_start){
                 
                 switch(sign(arrow.image_xscale)){
                     case -1:
-                    if(currentConfig != 0) setting[3,1] = ds_list_find_value(pieceConfig, currentConfig - 1);
+                    if(currentConfig != 0){
+                        setting[3,1] = ds_list_find_value(pieceConfig, currentConfig - 1);
+                    }else{
+                        setting[3,1] = ds_list_find_value(pieceConfig, ds_list_size(pieceConfig) - 1);
+                    };
                     break;
                     case 1:
-                    if(currentConfig != ds_list_size(pieceConfig) - 1) setting[3,1] = ds_list_find_value(pieceConfig, currentConfig + 1);
+                    if(currentConfig != ds_list_size(pieceConfig) - 1){
+                        setting[3,1] = ds_list_find_value(pieceConfig, currentConfig + 1);
+                    }else{
+                        setting[3,1] = ds_list_find_value(pieceConfig, 0);
+                    };
                     break;
                 };
             };

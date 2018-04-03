@@ -1,27 +1,58 @@
 ///scr_buildConfigsTable()
-configs = ds_grid_create(3, 16);
+configs = ds_grid_create(2, 16);
 var i;
 
-//---Populate configs table: WAVE---
-
-//  Populate ID's
-for(i = 0; i < 8; i++) ds_grid_set(configs, 0, i, "A" + i);
-
-for(i = 0; i < 8; i++) ds_grid_set(configs, 0, i + 8, "B" + i);
-
-//  Populate rows and columns
-for(i = 1; i < 8; i++){
-    var row;
-    if(sign(i) == -1) row = 1 else row = 2;
-    
-    ds_grid_set(configs, row, i, i);
-    ds_grid_set(configs, row, i, row);
+//  Populate rows
+for(i = 0; i < 16; i++){
+    if(i < 4) ds_grid_set(configs, 0, i, 1) else
+    if(i < 8) ds_grid_set(configs, 0, i, 2) else
+    if(i < 12) ds_grid_set(configs, 0, i, 7) else ds_grid_set(configs, 0, i, 8);
 };
 
-for(i = 1; i < 8; i++){
-    var row;
-    if(sign(i) == -1) row = 8 else row = 7;
+//---Populate column configs---
+
+//  wave
+if(setting[3,1] == "Wave"){
+    ds_grid_set(configs, 1, 0, 1);
+    ds_grid_set(configs, 1, 1, 3);
+    ds_grid_set(configs, 1, 2, 5);
+    ds_grid_set(configs, 1, 3, 7);
     
-    ds_grid_set(configs, row, i + 8, i);
-    ds_grid_set(configs, row, i + 8, row);
+    ds_grid_set(configs, 1, 4, 2);
+    ds_grid_set(configs, 1, 5, 4);
+    ds_grid_set(configs, 1, 6, 6);
+    ds_grid_set(configs, 1, 7, 8);
+    
+    ds_grid_set(configs, 1, 8, 1);
+    ds_grid_set(configs, 1, 9, 3);
+    ds_grid_set(configs, 1, 10, 5);
+    ds_grid_set(configs, 1, 11, 7);
+    
+    ds_grid_set(configs, 1, 12, 2);
+    ds_grid_set(configs, 1, 13, 4);
+    ds_grid_set(configs, 1, 14, 6);
+    ds_grid_set(configs, 1, 15, 8);
+};
+
+//  Columns
+if(setting[3,1] == "Columns"){
+    ds_grid_set(configs, 1, 0, 1);
+    ds_grid_set(configs, 1, 1, 3);
+    ds_grid_set(configs, 1, 2, 5);
+    ds_grid_set(configs, 1, 3, 7);
+    
+    ds_grid_set(configs, 1, 4, 1);
+    ds_grid_set(configs, 1, 5, 3);
+    ds_grid_set(configs, 1, 6, 5);
+    ds_grid_set(configs, 1, 7, 7);
+    
+    ds_grid_set(configs, 1, 8, 2);
+    ds_grid_set(configs, 1, 9, 4);
+    ds_grid_set(configs, 1, 10, 6);
+    ds_grid_set(configs, 1, 11, 8);
+    
+    ds_grid_set(configs, 1, 12, 2);
+    ds_grid_set(configs, 1, 13, 4);
+    ds_grid_set(configs, 1, 14, 6);
+    ds_grid_set(configs, 1, 15, 8);
 };

@@ -1,7 +1,3 @@
-Fix piece being set out of place
+Start on game logic
 
-Move config logic into populate script
-
-Make row/column settings programatic
-
-Fix image index and charge not being set
+consider making buttons hide when they can't do anything (i.e. no more options to the right)

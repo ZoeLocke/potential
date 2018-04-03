@@ -42,7 +42,7 @@ ds_map_add(settingsList, "Max Charge", 6);
 ds_map_add(settingsList, "Board Type", "Full");
 
 pieceConfig = ds_list_create();
-ds_list_add(pieceConfig, "Wave", "Staggered", "Columns");
+ds_list_add(pieceConfig, "Wave", "Columns");
 
 setting[0,0] = "Initial Charge";
 setting[0,1] = 2;

@@ -31,8 +31,8 @@ for(i = 0; i < 10; i++){
             yPos = marker.y + (markerSize / 2);
             
             var piece = instance_create(xPos, yPos, obj_piece);
-            charge = ds_grid_get(pieces, 5, pieceEntry);
-            image_index = ds_grid_get(pieces, 1, pieceEntry);
+            piece.charge = ds_grid_get(pieces, 5, pieceEntry);
+            piece.image_index = ds_grid_get(pieces, 1, pieceEntry);
         };    
     };
 };

@@ -143,4 +143,32 @@ if(room == rm_game){
     }else{
         obj_transitionButton.image_index = 0;
     };
+    
+    //---Clicking on a piece---
+    var piece = instance_place(mouse_x, mouse_y, obj_piece)
+    if(piece != noone){
+        if(mouse_check_button_pressed(mb_left)){
+            
+            //  Loop through each marker to see if it's visible
+            var markersVisible = false;
+            var maxMarkers = instance_number(obj_boardMarker)
+            var i;
+            for(i = 0; i < maxMarkers; i++){
+                var marker = instance_find(obj_boardMarker, i);
+                if(marker.visible = true){
+                    //  Update the variable and escape the foor loop
+                    markersVisible = true;
+                    i = maxMarkers;
+                };
+            };
+            
+            //  If the movement guides are visible, hide them
+            if(markersVisible == true){
+                with(obj_boardMarker) visible = false;
+            }else{
+                //  else run the script to make them visible
+                scr_pieceControl(piece);
+            };
+        };
+    };
 };

@@ -2,7 +2,7 @@
 <object>
   <spriteName>spr_boardMarker</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>10</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>row = 0;
 col = 0;
+con = 0;
 </string>
           </argument>
         </arguments>
@@ -57,7 +58,7 @@ draw_set_valign(fa_middle);
 draw_set_color(global.colourAlt);
 draw_set_font(fnt_label);
 
-var text = row + "," + col;
+var text = row + "," + col + " (" + con + ")";
 var objMid = sprite_get_width(spr_boardMarker) / 2;
 draw_text(x + objMid, y + objMid, text);
 </string>

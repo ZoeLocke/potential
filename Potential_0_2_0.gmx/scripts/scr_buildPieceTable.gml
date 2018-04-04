@@ -30,5 +30,4 @@ for(i = 0; i < 16; i++){
 //  Populate charge
 ds_grid_set_region(pieces, 5, 0, 5, ds_grid_height(pieces) - 1, setting[0,1]);
 
-obj_debug.str = ds_grid_write(pieces);
 ds_grid_sort(pieces, 4, true);

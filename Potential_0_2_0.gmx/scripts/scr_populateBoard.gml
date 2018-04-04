@@ -11,7 +11,7 @@ for(i = 0; i < 10; i++){
         var yPos = startY + (markerSize * i + 1);
         
         //  Generate the cpos as row + (col * 10)
-        var cPos = j + (i * 10);
+        var cPos = cPosCalc(j, i);
         var maxY = ds_grid_height(pieces) - 1
         var pieceEntry;
         
@@ -24,7 +24,8 @@ for(i = 0; i < 10; i++){
         
         var marker = instance_create(xPos, yPos, obj_boardMarker);
         marker.row = i;
-        marker.col = j;    
+        marker.col = j;  
+        marker.con = j + cPos;  
         
         if(pieceEntry != noone){
             xPos = marker.x + (markerSize / 2);
@@ -33,6 +34,7 @@ for(i = 0; i < 10; i++){
             var piece = instance_create(xPos, yPos, obj_piece);
             piece.charge = ds_grid_get(pieces, 5, pieceEntry);
             piece.image_index = ds_grid_get(pieces, 1, pieceEntry);
+            piece.pieceID = cPos;
         };    
     };
 };

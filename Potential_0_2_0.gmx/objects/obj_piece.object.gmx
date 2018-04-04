@@ -30,6 +30,7 @@ image_speed = 0;
 var colour = 0;
 image_index = colour;
 charge = 100;
+pieceID = 0;
 </string>
           </argument>
         </arguments>
@@ -60,7 +61,7 @@ draw_set_valign(fa_middle);
 draw_set_color(global.colourAlt);
 draw_set_font(fnt_charge);
 
-draw_text(x, y, charge);
+draw_text(x, y, pieceID);
 </string>
           </argument>
         </arguments>

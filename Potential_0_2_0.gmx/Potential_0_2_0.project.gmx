@@ -60,12 +60,16 @@
     </scripts>
     <scripts name="Input">
       <script>scripts\scr_input.gml</script>
+      <script>scripts\scr_pieceControl.gml</script>
     </scripts>
     <scripts name="Populate">
       <script>scripts\scr_populateBoard.gml</script>
       <script>scripts\scr_pieceTable.gml</script>
       <script>scripts\scr_buildPieceTable.gml</script>
       <script>scripts\scr_buildConfigsTable.gml</script>
+    </scripts>
+    <scripts name="Functions">
+      <script>scripts\cPosCalc.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">

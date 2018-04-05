@@ -24,7 +24,8 @@ for(i = 0; i < 10; i++){
         
         var marker = instance_create(xPos, yPos, obj_boardMarker);
         marker.row = i;
-        marker.col = j;    
+        marker.col = j;
+        marker.cPos = cPos;    
         
         if(pieceEntry != noone){
             xPos = marker.x + (markerSize / 2);

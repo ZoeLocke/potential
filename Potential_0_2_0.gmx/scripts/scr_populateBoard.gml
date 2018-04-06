@@ -11,13 +11,13 @@ for(i = 0; i < 10; i++){
         var yPos = startY + (markerSize * i + 1);
         
         //  Generate the cpos as row + (col * 10)
-        var cPos = j + (i * 10);
-        var maxY = ds_grid_height(pieces) - 1
+        var cPos = scr_calculateCPos(j, i);
+        var gridHeight = ds_grid_height(pieces) - 1
         var pieceEntry;
         
         //  Set the pieceEntry variable with the relvent position of the piece in the ds_grid if there is one at the current cPos
-        if(ds_grid_value_exists(pieces, 4, 0, 4, maxY, cPos)){
-            pieceEntry = ds_grid_value_y(pieces, 4, 0, 4, maxY, cPos);
+        if(ds_grid_value_exists(pieces, 4, 0, 4, gridHeight, cPos)){
+            pieceEntry = ds_grid_value_y(pieces, 4, 0, 4, gridHeight, cPos);
         }else{
             pieceEntry = noone;
         };

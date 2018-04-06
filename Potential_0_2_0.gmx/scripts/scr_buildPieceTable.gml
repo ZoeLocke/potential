@@ -3,11 +3,11 @@ pieces = ds_grid_create(6, 16);
 var i;
 
 //---Populate piece table---
-//  ID, image_index, row, col, charge
+//  ID, image_index, row, col, cPos, charge
 
 //  Populate IDs
-for(i = 0; i < 8; i++) ds_grid_set(pieces, 0, i, " A" + i);
-for(i = 0; i < 8; i++) ds_grid_set(pieces, 0, i + 8, " B" + i);
+for(i = 0; i < 8; i++) ds_grid_set(pieces, 0, i, "A" + i);
+for(i = 0; i < 8; i++) ds_grid_set(pieces, 0, i + 8, "B" + i);
 
 //  Populate image_index
 for(i = 0; i < 8; i++) ds_grid_set(pieces, 1, i, 0);
@@ -29,6 +29,3 @@ for(i = 0; i < 16; i++){
 
 //  Populate charge
 ds_grid_set_region(pieces, 5, 0, 5, ds_grid_height(pieces) - 1, setting[0,1]);
-
-obj_debug.str = ds_grid_write(pieces);
-ds_grid_sort(pieces, 4, true);

@@ -57,15 +57,18 @@
       <script>scripts\scr_scaleRoom.gml</script>
       <script>scripts\scr_displaySetup.gml</script>
       <script>scripts\scr_displayLive.gml</script>
+      <script>scripts\scr_displayLegalMoves.gml</script>
     </scripts>
     <scripts name="Input">
       <script>scripts\scr_input.gml</script>
     </scripts>
     <scripts name="Populate">
       <script>scripts\scr_populateBoard.gml</script>
-      <script>scripts\scr_pieceTable.gml</script>
       <script>scripts\scr_buildPieceTable.gml</script>
       <script>scripts\scr_buildConfigsTable.gml</script>
+    </scripts>
+    <scripts name="Helpers">
+      <script>scripts\scr_calculateCPos.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -89,8 +92,6 @@
       </objects>
       <objects name="Components">
         <object>objects\obj_board</object>
-        <object>objects\obj_pieceBlue</object>
-        <object>objects\obj_pieceRed</object>
         <object>objects\obj_transitionButton</object>
         <object>objects\obj_logo</object>
         <object>objects\obj_arrow</object>

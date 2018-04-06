@@ -168,9 +168,6 @@ if(room == rm_start) state = scr_stateStart;
 if(room == rm_game) state = scr_stateGame;
 
 script_execute(state);
-
-
-
 </string>
           </argument>
         </arguments>
@@ -196,9 +193,11 @@ script_execute(state);
             <string>/// On start of room scripts
 scr_displayStartSetup();
 if(room == rm_game){
-    scr_populateConfigsTable();
-    scr_populatePieceTable();
-    scr_populateBoard();   
+    scr_createConfigsTable();
+    scr_createPieceTable();
+    scr_createBoardTable();
+    
+    scr_displayPopulateBoard();   
 };
 </string>
           </argument>

@@ -3,7 +3,7 @@
   <spriteName>spr_debug</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-100</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,12 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Hide sprite and set variable
-image_speed = 0;
-image_index = 1;
-depth = -10000
-
-str = 0;
+            <string>///Set variables
+debugText = 0;
 </string>
           </argument>
         </arguments>
@@ -53,13 +49,13 @@ str = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw bugfix text
+            <string>//  Draw debug text
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_color(c_red);
 draw_set_font(fnt_debug);
 
-draw_text_ext(x, y, str, 100, 2000);
+draw_text_ext(x, y, debugText, 100, 2000);
 </string>
           </argument>
         </arguments>

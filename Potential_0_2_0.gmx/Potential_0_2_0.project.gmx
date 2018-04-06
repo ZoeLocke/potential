@@ -58,18 +58,22 @@
       <script>scripts\scr_displayStartSetup.gml</script>
       <script>scripts\scr_displayStartLive.gml</script>
       <script>scripts\scr_displayLegalMoves.gml</script>
+      <script>scripts\scr_displayPopulateBoard.gml</script>
     </scripts>
     <scripts name="State">
       <script>scripts\scr_stateStart.gml</script>
       <script>scripts\scr_stateGame.gml</script>
     </scripts>
-    <scripts name="Populate">
-      <script>scripts\scr_populateBoard.gml</script>
-      <script>scripts\scr_populatePieceTable.gml</script>
-      <script>scripts\scr_populateConfigsTable.gml</script>
-    </scripts>
     <scripts name="Calculate">
       <script>scripts\scr_calculateCPos.gml</script>
+    </scripts>
+    <scripts name="Helper">
+      <script>scripts\scr_helperFindMarker.gml</script>
+    </scripts>
+    <scripts name="Create">
+      <script>scripts\scr_createConfigsTable.gml</script>
+      <script>scripts\scr_createPieceTable.gml</script>
+      <script>scripts\scr_createBoardTable.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">

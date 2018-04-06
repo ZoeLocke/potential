@@ -1,4 +1,5 @@
-///scr_buildPieceTable()
+///scr_createPieceTable()
+if(ds_exists(pieces, ds_type_grid)) ds_grid_destroy(pieces);
 pieces = ds_grid_create(6, 16);
 var i;
 
@@ -16,7 +17,6 @@ for(i = 0; i < 8; i++) ds_grid_set(pieces, 1, i + 8, 1);
 //  Populate rows and columns
 for(i = 0; i < 16; i++) ds_grid_set(pieces, 2, i, ds_grid_get(configs, 0, i));
 for(i = 0; i < 16; i++) ds_grid_set(pieces, 3, i, ds_grid_get(configs, 1, i));
-if(ds_exists(configs, ds_type_grid)) ds_grid_destroy(configs);
 
 //  Populate Contiguous position
 for(i = 0; i < 16; i++){

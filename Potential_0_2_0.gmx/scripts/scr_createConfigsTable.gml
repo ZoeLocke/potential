@@ -1,8 +1,9 @@
-///scr_buildConfigsTable()
+///scr_createConfigsTable()
+if(ds_exists(configs, ds_type_grid)) ds_grid_destroy(configs);
 configs = ds_grid_create(2, 16);
-var i;
 
 //  Populate rows
+var i;
 for(i = 0; i < 16; i++){
     if(i < 4) ds_grid_set(configs, 0, i, 1) else
     if(i < 8) ds_grid_set(configs, 0, i, 2) else

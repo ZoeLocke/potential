@@ -29,7 +29,11 @@
 
 row = 0;
 col = 0;
+<<<<<<< HEAD
 cPos = 0;
+=======
+con = 0;
+>>>>>>> 165c1cc5aee10657509d3c53ffd34459cf33a82a
 </string>
           </argument>
         </arguments>
@@ -60,7 +64,11 @@ draw_set_valign(fa_middle);
 draw_set_color(global.colourAlt);
 draw_set_font(fnt_label);
 
+<<<<<<< HEAD
 var text = string(row) + "," + string(col) + "," + string(cPos);
+=======
+var text = row + "," + col + " (" + con + ")";
+>>>>>>> 165c1cc5aee10657509d3c53ffd34459cf33a82a
 var objMid = sprite_get_width(spr_boardMarker) / 2;
 draw_text(x + objMid, y + objMid, text);
 </string>

@@ -29,3 +29,8 @@ for(i = 0; i < 16; i++){
 
 //  Populate charge
 ds_grid_set_region(pieces, 5, 0, 5, ds_grid_height(pieces) - 1, setting[0,1]);
+<<<<<<< HEAD:Potential_0_2_0.gmx/scripts/scr_populatePieceTable.gml
+=======
+
+ds_grid_sort(pieces, 4, true);
+>>>>>>> 165c1cc5aee10657509d3c53ffd34459cf33a82a:Potential_0_2_0.gmx/scripts/scr_buildPieceTable.gml

@@ -60,7 +60,6 @@
     <instance objName="txt_settingText" x="1250" y="704" name="inst_B5B939FF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="txt_settingText" x="1250" y="1088" name="inst_E7E82ECD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="txt_settingText" x="1250" y="1472" name="inst_BE9DE497" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_debug" x="1248" y="2304" name="inst_8318D418" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_arrow" x="1408" y="704" name="inst_6758AF82" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_arrow" x="1088" y="704" name="inst_8A47DF08" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_arrow" x="1088" y="1088" name="inst_ADBE43E7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

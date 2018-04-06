@@ -30,7 +30,7 @@ image_speed = 0;
 image_index = 1;
 depth = -10000
 
-str = "";
+str = 0;
 </string>
           </argument>
         </arguments>

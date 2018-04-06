@@ -6,8 +6,8 @@ var i;
 //  ID, image_index, row, col, cPos, charge
 
 //  Populate IDs
-for(i = 0; i < 8; i++) ds_grid_set(pieces, 0, i, "A" + i);
-for(i = 0; i < 8; i++) ds_grid_set(pieces, 0, i + 8, "B" + i);
+for(i = 0; i < 8; i++) ds_grid_set(pieces, 0, i, "A" + string(i));
+for(i = 0; i < 8; i++) ds_grid_set(pieces, 0, i + 8, "B" + string(i));
 
 //  Populate image_index
 for(i = 0; i < 8; i++) ds_grid_set(pieces, 1, i, 0);

@@ -22,7 +22,7 @@ if(ds_exists(configs, ds_type_grid)) ds_grid_destroy(configs);
 for(i = 0; i < 16; i++){
     var col = ds_grid_get(pieces, 3, i);
     var row = ds_grid_get(pieces, 2, i);
-    var cPos = col + (row * 10);
+    var cPos = scr_calculateCPos(col, row);
     
     ds_grid_set(pieces, 4, i, cPos);
 };

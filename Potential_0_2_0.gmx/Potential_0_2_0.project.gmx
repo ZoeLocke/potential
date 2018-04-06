@@ -54,20 +54,21 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="Display">
-      <script>scripts\scr_scaleRoom.gml</script>
-      <script>scripts\scr_displaySetup.gml</script>
-      <script>scripts\scr_displayLive.gml</script>
+      <script>scripts\scr_displayScaleRoom.gml</script>
+      <script>scripts\scr_displayStartSetup.gml</script>
+      <script>scripts\scr_displayStartLive.gml</script>
       <script>scripts\scr_displayLegalMoves.gml</script>
     </scripts>
-    <scripts name="Input">
-      <script>scripts\scr_input.gml</script>
+    <scripts name="State">
+      <script>scripts\scr_stateStart.gml</script>
+      <script>scripts\scr_stateGame.gml</script>
     </scripts>
     <scripts name="Populate">
       <script>scripts\scr_populateBoard.gml</script>
-      <script>scripts\scr_buildPieceTable.gml</script>
-      <script>scripts\scr_buildConfigsTable.gml</script>
+      <script>scripts\scr_populatePieceTable.gml</script>
+      <script>scripts\scr_populateConfigsTable.gml</script>
     </scripts>
-    <scripts name="Helpers">
+    <scripts name="Calculate">
       <script>scripts\scr_calculateCPos.gml</script>
     </scripts>
   </scripts>

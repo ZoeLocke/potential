@@ -61,6 +61,7 @@ maxInitCharge = 4;
 
 //---Input variables---
 activeButton = noone;
+state = scr_stateStart;
 
 //---Meta---
 buildNumber = "0.2.0";
@@ -160,9 +161,13 @@ activeButton.y -= 5;
           <argument>
             <kind>1</kind>
             <string>/// Step actions
-scr_displayLive();
-scr_scaleRoom();
-scr_input();
+scr_displayStartLive();
+scr_displayScaleRoom();
+
+if(room == rm_start) state = scr_stateStart;
+if(room == rm_game) state = scr_stateGame;
+
+script_execute(state);
 
 
 
@@ -189,10 +194,10 @@ scr_input();
           <argument>
             <kind>1</kind>
             <string>/// On start of room scripts
-scr_displaySetup();
+scr_displayStartSetup();
 if(room == rm_game){
-    scr_buildConfigsTable();
-    scr_buildPieceTable();
+    scr_populateConfigsTable();
+    scr_populatePieceTable();
     scr_populateBoard();   
 };
 </string>

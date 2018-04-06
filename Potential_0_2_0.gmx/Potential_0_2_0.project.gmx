@@ -59,15 +59,9 @@
       <script>scripts\scr_displayStartLive.gml</script>
       <script>scripts\scr_displayLegalMoves.gml</script>
     </scripts>
-<<<<<<< HEAD
     <scripts name="State">
       <script>scripts\scr_stateStart.gml</script>
       <script>scripts\scr_stateGame.gml</script>
-=======
-    <scripts name="Input">
-      <script>scripts\scr_input.gml</script>
-      <script>scripts\scr_pieceControl.gml</script>
->>>>>>> 165c1cc5aee10657509d3c53ffd34459cf33a82a
     </scripts>
     <scripts name="Populate">
       <script>scripts\scr_populateBoard.gml</script>
@@ -76,9 +70,6 @@
     </scripts>
     <scripts name="Calculate">
       <script>scripts\scr_calculateCPos.gml</script>
-    </scripts>
-    <scripts name="Functions">
-      <script>scripts\cPosCalc.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">

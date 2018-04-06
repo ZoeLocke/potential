@@ -31,7 +31,6 @@ var colour = 0;
 image_index = colour;
 pieceID = "A1";
 charge = 100;
-pieceID = 0;
 </string>
           </argument>
         </arguments>

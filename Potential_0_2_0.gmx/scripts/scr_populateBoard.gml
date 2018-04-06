@@ -11,13 +11,8 @@ for(i = 0; i < 10; i++){
         var yPos = startY + (markerSize * i + 1);
         
         //  Generate the cpos as row + (col * 10)
-<<<<<<< HEAD
         var cPos = scr_calculateCPos(j, i);
         var gridHeight = ds_grid_height(pieces) - 1
-=======
-        var cPos = cPosCalc(j, i);
-        var maxY = ds_grid_height(pieces) - 1
->>>>>>> 165c1cc5aee10657509d3c53ffd34459cf33a82a
         var pieceEntry;
         
         //  Set the pieceEntry variable with the relvent row position of the piece in the ds_grid if there is one at the current cPos
@@ -30,13 +25,8 @@ for(i = 0; i < 10; i++){
         //  Create a marker at the current position, and set it's variables
         var marker = instance_create(xPos, yPos, obj_boardMarker);
         marker.row = i;
-<<<<<<< HEAD
         marker.col = j;
         marker.cPos = cPos;    
-=======
-        marker.col = j;  
-        marker.con = j + cPos;  
->>>>>>> 165c1cc5aee10657509d3c53ffd34459cf33a82a
         
         //  If there is supposed to be a piece at the current position, create a piece and set it's variables
         if(pieceEntry != noone){
@@ -47,7 +37,6 @@ for(i = 0; i < 10; i++){
             piece.pieceID = ds_grid_get(pieces, 0, pieceEntry);
             piece.charge = ds_grid_get(pieces, 5, pieceEntry);
             piece.image_index = ds_grid_get(pieces, 1, pieceEntry);
-            piece.pieceID = cPos;
         };    
     };
 };

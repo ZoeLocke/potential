@@ -1,4 +1,5 @@
 ///scr_createBoardTable();
+if(ds_exists(board, ds_type_grid)) ds_grid_destroy(board);
 board = ds_grid_create(10, 10);
 
 //---Create and populate board table---
@@ -16,6 +17,4 @@ for(i = 0; i < 16; i++){
 };
 
 if(ds_exists(configs, ds_type_grid)) ds_grid_destroy(configs);
-
-obj_debug.debugText = ds_grid_write(board);
 

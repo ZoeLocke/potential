@@ -4,62 +4,75 @@ var piece = argument0;
 var piecePos = ds_grid_value_y(pieces, 0, 0, 0, gridHeight, piece.pieceID); 
 var col = ds_grid_get(pieces, 3, piecePos);
 var row = ds_grid_get(pieces, 2, piecePos);
-var cPos = ds_grid_get(pieces, 4, piecePos);
 
-//---Check each notional adjacent space for legal moves---
-var targetCol;
-var targetRow;
+//  Create a grid containing every notional move, and whether there is a piece at that space
+//  Grid is Row, Col, cPos, Piece at Space
+var moves = ds_grid_create(4, 8);
 var targetCPos;
-var validSpace;
-var emptySpace;
 
 //  Above Left
-targetCol = col - 1;
-targetRow = row - 1;
-targetCPos = scr_calculateCPos(targetCol, targetRow);
+ds_grid_set(moves, 0, 0, row - 1);
+ds_grid_set(moves, 1, 0, col - 1);
+targetCPos = scr_calculateCPos(col - 1, row - 1);
+ds_grid_set(moves, 2, 0, targetCPos);
+ds_grid_set(moves, 3, 0, ds_grid_value_exists(moves, 4, 0, 4, gridHeight, targetCPos));
+//  Above
+ds_grid_set(moves, 0, 1, row - 1);
+ds_grid_set(moves, 1, 1, col);
+targetCPos = scr_calculateCPos(col, row - 1);
+ds_grid_set(moves, 2, 1, targetCPos);
+ds_grid_set(moves, 3, 1, ds_grid_value_exists(moves, 4, 0, 4, gridHeight, targetCPos));
+//  Above Right
+ds_grid_set(moves, 0, 2, row - 1);
+ds_grid_set(moves, 1, 2, col + 1);
+targetCPos = scr_calculateCPos(col + 1, row - 1);
+ds_grid_set(moves, 2, 2, targetCPos);
+ds_grid_set(moves, 3, 2, ds_grid_value_exists(moves, 4, 0, 4, gridHeight, targetCPos));
+//  Left
+ds_grid_set(moves, 0, 3, row);
+ds_grid_set(moves, 1, 3, col - 1);
+targetCPos = scr_calculateCPos(col - 1, row);
+ds_grid_set(moves, 2, 3, targetCPos);
+ds_grid_set(moves, 3, 3, ds_grid_value_exists(moves, 4, 0, 4, gridHeight, targetCPos));
+//  Right
+ds_grid_set(moves, 0, 4, row);
+ds_grid_set(moves, 1, 4, col + 1);
+targetCPos = scr_calculateCPos(col + 1, row);
+ds_grid_set(moves, 2, 4, targetCPos);
+ds_grid_set(moves, 3, 4, ds_grid_value_exists(moves, 4, 0, 4, gridHeight, targetCPos));
+//  Below Left
+ds_grid_set(moves, 0, 5, row + 1);
+ds_grid_set(moves, 1, 5, col - 1);
+targetCPos = scr_calculateCPos(col - 1, row + 1);
+ds_grid_set(moves, 2, 5, targetCPos);
+ds_grid_set(moves, 3, 5, ds_grid_value_exists(moves, 4, 0, 4, gridHeight, targetCPos));
+//  Below
+ds_grid_set(moves, 0, 6, row + 1);
+ds_grid_set(moves, 1, 6, col);
+targetCPos = scr_calculateCPos(col, row + 1);
+ds_grid_set(moves, 2, 6, targetCPos);
+ds_grid_set(moves, 3, 6, ds_grid_value_exists(moves, 4, 0, 4, gridHeight, targetCPos));
+//  Below Right
+ds_grid_set(moves, 0, 7, row + 1);
+ds_grid_set(moves, 1, 7, col + 1);
+targetCPos = scr_calculateCPos(col + 1, row + 1);
+ds_grid_set(moves, 2, 7, targetCPos);
+ds_grid_set(moves, 3, 7, ds_grid_value_exists(moves, 4, 0, 4, gridHeight, targetCPos));
 
-//  IF the space is valid
-if(targetCPos >= 0 && targetCPos <= 99){
-    //  If there is no piece in the space
-    if(!ds_grid_value_exists(pieces, 4, 0, 4, gridHeight, targetCPos)){
+//  Check for legal moves in above grid
+var i;
+gridHeight = ds_grid_height(moves);
+for(i = 0; i < gridHeight; i++){
+    var cPos = ds_grid_get(moves, 2, i);
+    var pieceAtCPos = ds_grid_get(moves, 3, i)
+    obj_debug.debugText = cPos >= 0;
+    if(cPos >= 0 && cPos <= 99 && !pieceAtCPos){
         
         //  Loop through each marker on the board to find the right one!
-        var maxMarkers = instance_number(obj_boardMarker)
-        var i;
-        for(i = 0; i < maxMarkers; i++){
-            var marker = instance_find(obj_boardMarker, i);
-            if(marker.cPos == targetCPos){
-                //  Make the space visible and escape the for loop
-                marker.visible = true;
-                i = maxMarkers;
-            }
-        }
-    
-    }else{
-        //  If there is a piece in the space
-        var jumpCol = targetCol - 1;
-        var jumpRow = targetRow - 1;
-        var jumpCPos = scr_calculateCPos(jumpCol, jumpRow);
-        //  The jump position is a valid space
-        if(jumpCPos >= 0 && jumpCPos <= 99){
-            //  If there is no piece in the jump position space
-            if(!ds_grid_value_exists(pieces, 4, 0, 4, gridHeight, jumpCPos)){
-                    
-                //  Loop through each marker on the board to find the right one!
-                var maxMarkers = instance_number(obj_boardMarker)
-                var i;
-                for(i = 0; i < maxMarkers; i++){
-                    var marker = instance_find(obj_boardMarker, i);
-                    if(marker.cPos == jumpCPos){
-                        //  Make the marker visible and escape the for loop
-                        marker.visible = true;
-                        i = maxMarkers;
-                    }
-                }
-            }
-        }
+        scr_helperFindMarker(cPos);
     }
 };
 
+ds_grid_destroy(moves);
 
-    
+

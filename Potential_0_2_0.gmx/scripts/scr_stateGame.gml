@@ -21,6 +21,17 @@ if(place_meeting(mouse_x, mouse_y, obj_transitionButton)){
     obj_transitionButton.image_index = 0;
 };
 
+//---Interactions with board markers---
+//  If the mouse is clicked when not over a piece or a visible marker, hide all board markers
+//var overPiece = place_meeting(mouse_x, mouse_y, obj_piece);
+var overMarker = instance_place(mouse_x, mouse_y, obj_boardMarker)
+
+if(mouse_check_button_released(mb_left)){
+    if(!overMarker.visible){
+        with(obj_boardMarker) visible = false;
+    }
+};
+
 //---Interactions with game pieces---
 if(place_meeting(mouse_x, mouse_y, obj_piece)){
     var piece = instance_place(mouse_x, mouse_y, obj_piece);
@@ -28,10 +39,5 @@ if(place_meeting(mouse_x, mouse_y, obj_piece)){
     if(mouse_check_button_released(mb_left)){
          with(obj_boardMarker) visible = false;
         scr_displayLegalMoves(piece);
-    }
-}else{
-    //  If the mouse is clicked when not over a piece, hide all board markers
-    if(mouse_check_button_released(mb_left)){
-        with(obj_boardMarker) visible = false;
-    }
+    }    
 };

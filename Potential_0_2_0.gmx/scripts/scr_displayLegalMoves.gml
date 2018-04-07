@@ -16,11 +16,26 @@ var i;
 var j;
 for(i = startY; i < endY + 1; i++){
     for(j = startX; j < endX + 1; j++){
-        var legalSpace = i >= 0 && j >= 0 && i <= 99 && j <= 99;
-        var freeSpace = ds_grid_get(board, j, i) == 0;
+        var pieceAtTarget = ds_grid_get(board, j, i);
         
-        if(legalSpace && freeSpace){
-            scr_helperFindMarker(i, j);
+        //  Are adjacent spaces legal?
+        var markerPos = j + (i * 10);
+        var marker = instance_find(obj_boardMarker, markerPos);
+        
+        marker.visible = pieceAtTarget == 0;
+
+        //  Are jump spaces legal?
+        if(pieceAtTarget > ""){
+            var vectorX = 2 * (j - piecePosX);
+            var vectorY = 2 * (i - piecePosY);
+            var targetX = piecePosX + vectorX;
+            var targetY = piecePosY + vectorY;
+        
+            var jumpTarget = ds_grid_get(board, targetX, targetY);
+            markerPos = targetX + (targetY * 10);
+            marker = instance_find(obj_boardMarker, markerPos);
+            
+            marker.visible = jumpTarget == 0;
         }
     }
 };

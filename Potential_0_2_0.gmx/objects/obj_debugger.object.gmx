@@ -2,7 +2,7 @@
 <object>
   <spriteName>spr_debug</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>-100</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Set variables
-debugText = 0;
+            <string>text = "woo";
 </string>
           </argument>
         </arguments>
@@ -55,7 +54,7 @@ draw_set_valign(fa_middle);
 draw_set_color(c_red);
 draw_set_font(fnt_debug);
 
-draw_text_ext(x, y, debugText, 100, 2000);
+draw_text(x, y, text);
 </string>
           </argument>
         </arguments>

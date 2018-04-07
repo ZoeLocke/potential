@@ -57,6 +57,7 @@
       <script>scripts\scr_displayScaleRoom.gml</script>
       <script>scripts\scr_displayStartSetup.gml</script>
       <script>scripts\scr_displayStartLive.gml</script>
+      <script>scripts\scr_displayLegalMovesOLD.gml</script>
       <script>scripts\scr_displayLegalMoves.gml</script>
       <script>scripts\scr_displayPopulateBoard.gml</script>
     </scripts>
@@ -89,7 +90,8 @@
   <objects name="objects">
     <objects name="System">
       <object>objects\obj_controller</object>
-      <object>objects\obj_debug</object>
+      <object>objects\obj_debugOLD</object>
+      <object>objects\obj_debugger</object>
     </objects>
     <objects name="Game">
       <objects name="Text">

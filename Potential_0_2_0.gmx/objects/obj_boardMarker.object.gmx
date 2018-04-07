@@ -62,7 +62,7 @@ draw_set_font(fnt_label);
 
 var text = string(row) + "," + string(col) + "," + string(cPos);
 var objMid = sprite_get_width(spr_boardMarker) / 2;
-draw_text(x + objMid, y + objMid, text);
+//draw_text(x + objMid, y + objMid, text);
 </string>
           </argument>
         </arguments>

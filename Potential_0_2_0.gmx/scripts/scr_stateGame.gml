@@ -20,7 +20,7 @@ if(place_meeting(mouse_x, mouse_y, obj_transitionButton)){
 }else{
     obj_transitionButton.image_index = 0;
 };
-
+/*
 //---Interactions with board markers---
 var overMarker = instance_place(mouse_x, mouse_y, obj_boardMarker);
 var overPiece = instance_place(mouse_x, mouse_y, obj_piece);
@@ -53,7 +53,7 @@ if(mouse_check_button_released(mb_left)){
         }
     }
 };
-
+*/
 //---Interactions with game pieces---
 if(place_meeting(mouse_x, mouse_y, obj_piece)){
     var piece = instance_place(mouse_x, mouse_y, obj_piece);
@@ -66,3 +66,4 @@ if(place_meeting(mouse_x, mouse_y, obj_piece)){
         scr_displayLegalMoves(piece);
     }    
 };
+

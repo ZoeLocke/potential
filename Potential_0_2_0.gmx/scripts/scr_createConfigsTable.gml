@@ -5,7 +5,7 @@ configs = ds_grid_create(2, 16);
 //  Populate rows
 var i;
 for(i = 0; i < 16; i++){
-    if(i < 4) ds_grid_set(configs, 0, i, 1) else
+    if(i < 4) ds_grid_set(configs, 0, i, 0) else
     if(i < 8) ds_grid_set(configs, 0, i, 2) else
     if(i < 12) ds_grid_set(configs, 0, i, 7) else ds_grid_set(configs, 0, i, 8);
 };
@@ -14,7 +14,7 @@ for(i = 0; i < 16; i++){
 
 //  wave
 if(setting[3,1] == "Wave"){
-    ds_grid_set(configs, 1, 0, 1);
+    ds_grid_set(configs, 1, 0, 0);
     ds_grid_set(configs, 1, 1, 3);
     ds_grid_set(configs, 1, 2, 5);
     ds_grid_set(configs, 1, 3, 7);

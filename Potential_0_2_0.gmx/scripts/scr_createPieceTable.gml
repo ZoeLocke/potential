@@ -15,4 +15,4 @@ for(i = 0; i < 8; i++) ds_grid_set(pieces, 1, i, 0);
 for(i = 0; i < 8; i++) ds_grid_set(pieces, 1, i + 8, 1);
 
 //  Populate charge
-ds_grid_set_region(pieces, 5, 0, 5, ds_grid_height(pieces) - 1, setting[0,1]);
+ds_grid_set_region(pieces, 2, 0, 2, ds_grid_height(pieces) - 1, setting[0,1]);

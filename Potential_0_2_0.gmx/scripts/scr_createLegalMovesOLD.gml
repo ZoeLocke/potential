@@ -1,4 +1,4 @@
-///scr_displayLegalMoves(piece)
+///scr_createLegalMoves(piece)
 var piece = argument0;
 var pieceID = piece.pieceID;
 

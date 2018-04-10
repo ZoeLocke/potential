@@ -54,7 +54,7 @@ draw_set_valign(fa_middle);
 draw_set_color(c_red);
 draw_set_font(fnt_debug);
 
-draw_text(x, y, text);
+draw_text_ext(x, y, text, 50, 1000);
 </string>
           </argument>
         </arguments>

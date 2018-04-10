@@ -58,7 +58,6 @@
       <script>scripts\scr_displayStartSetup.gml</script>
       <script>scripts\scr_displayStartLive.gml</script>
       <script>scripts\scr_displayLegalMovesOLD.gml</script>
-      <script>scripts\scr_displayLegalMoves.gml</script>
       <script>scripts\scr_displayPopulateBoard.gml</script>
     </scripts>
     <scripts name="State">
@@ -75,6 +74,8 @@
       <script>scripts\scr_createConfigsTable.gml</script>
       <script>scripts\scr_createPieceTable.gml</script>
       <script>scripts\scr_createBoardTable.gml</script>
+      <script>scripts\scr_createLegalMovesOLD.gml</script>
+      <script>scripts\scr_createLegalMoves.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">

@@ -31,7 +31,9 @@ var colour = 0;
 image_index = colour;
 pieceID = "A1";
 charge = 100;
+moves = 0;
 active = false;
+display = charge;
 </string>
           </argument>
         </arguments>
@@ -62,7 +64,7 @@ draw_set_valign(fa_middle);
 draw_set_color(global.colourAlt);
 draw_set_font(fnt_charge);
 
-draw_text(x, y, charge);
+draw_text(x, y, display);
 </string>
           </argument>
         </arguments>

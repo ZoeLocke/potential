@@ -1,10 +1,10 @@
 ///scr_createPieceTable()
 if(ds_exists(pieces, ds_type_grid)) ds_grid_destroy(pieces);
-pieces = ds_grid_create(3, 16);
+pieces = ds_grid_create(5, 16);
 var i;
 
 //---Populate piece table---
-//  ID, image_index, charge
+//  ID, image_index, charge, moves (0 by default), active (boolean)
 
 //  Populate IDs
 for(i = 0; i < 8; i++) ds_grid_set(pieces, 0, i, "A" + string(i));

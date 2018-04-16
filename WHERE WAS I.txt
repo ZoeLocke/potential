@@ -1,3 +1,2 @@
-Need to fix first piece getting a charge of 0
-Need Steph to help with move logic
-Need Steph to help with top row disabling pieces issue
+review stateGame code, especially looking for lingering assignments of active to pieces instead of the table
+Figure out how to itterate charge when jumping

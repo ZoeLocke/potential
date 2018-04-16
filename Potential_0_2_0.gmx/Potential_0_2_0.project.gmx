@@ -62,6 +62,7 @@
     </scripts>
     <scripts name="State">
       <script>scripts\scr_stateStart.gml</script>
+      <script>scripts\scr_stateGameOLD.gml</script>
       <script>scripts\scr_stateGame.gml</script>
     </scripts>
     <scripts name="Calculate">
@@ -74,7 +75,6 @@
       <script>scripts\scr_createConfigsTable.gml</script>
       <script>scripts\scr_createPieceTable.gml</script>
       <script>scripts\scr_createBoardTable.gml</script>
-      <script>scripts\scr_createLegalMovesOLD.gml</script>
       <script>scripts\scr_createLegalMoves.gml</script>
     </scripts>
   </scripts>

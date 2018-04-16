@@ -62,6 +62,7 @@ maxInitCharge = 4;
 //---Input variables---
 activeButton = noone;
 state = scr_stateStart;
+pieceLocked = false;
 
 //---Meta---
 buildNumber = "0.2.0";

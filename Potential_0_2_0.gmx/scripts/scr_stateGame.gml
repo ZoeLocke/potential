@@ -27,6 +27,7 @@ if(place_meeting(mouse_x, mouse_y, obj_piece) && !pieceLocked){
     var piece = instance_place(mouse_x, mouse_y, obj_piece);
     //  Clear existing legal moves and active pieces, and display new ones and activate clicked piece
     if(mouse_check_button_released(mb_left)){
+        if(ds_exists(global.jumpablePieces, ds_type_grid)) ds_grid_destroy(global.jumpablePieces);
         //  Hide all board markers
         with(obj_boardMarker) visible = false;
         
@@ -101,7 +102,8 @@ if(spaceLegal){
                 var legal = ds_grid_get(global.legalMoves, col, row);
                 if(legal == 1) visible = true;
             }
-            ds_grid_destroy(global.legalMoves);
+            if(ds_exists(global.legalMoves, ds_type_grid)) ds_grid_destroy(global.legalMoves);
+            if(ds_exists(global.jumpablePieces, ds_type_grid)) ds_grid_destroy(global.jumpablePieces);
         }else{
             //Otherwise, set moves to 0
             ds_grid_set(pieces, 3, activePieceEntryRow, 0);

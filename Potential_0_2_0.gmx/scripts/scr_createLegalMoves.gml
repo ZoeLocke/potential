@@ -3,14 +3,15 @@ var piece = argument0;
 var pieceID = piece.pieceID;
 
 //---Create table to store legal moves---
-//  table will be destroyed by any action that makes it no longer needed
-//  Table is row and col
+//  Table is a full representation of the board
 global.legalMoves = ds_grid_create(10, 10);
-
+//  Table is jump row, jump col, and jumpable piece ID
+//      Rows is 8 as that is the max number of jumpable spaces
+global.jumpablePieces = ds_grid_create(3,8) 
 
 //---These need one less to convert to a zero based array---
 var gridHeight = ds_grid_height(board) - 1;
-var gridWidth = ds_grid_width(board) - 1;
+var gridWidth = ds_grid_width(board) - 2;
 
 //---Find the row and column of the piece in the (zero based) board table---
 var piecePosY = ds_grid_value_y(board, 0, 0, gridWidth, gridHeight, pieceID);
@@ -47,7 +48,11 @@ for(i = startY; i <= endY; i++){
             var targetY = piecePosY + vectorY;
         
             var jumpTarget = ds_grid_get(board, targetX, targetY);
-            if(jumpTarget == 0) ds_grid_set(global.legalMoves, targetX, targetY, 1);            
+            if(jumpTarget == 0){
+                //  If a legal jump is available, mark the jump space, and store the ID of the jumpable piece
+                ds_grid_set(global.legalMoves, targetX, targetY, 1);
+                ds_grid_set(global.jumpablePieces, targetX, targetY, pieceAtTarget);
+            }
         }
     }
 };

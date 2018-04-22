@@ -33,7 +33,7 @@ for(i = 0; i < 10; i++){
             var charge = ds_grid_get(pieces, 2, pieceEntry);
             var moves = ds_grid_get(pieces, 3, pieceEntry);
             var active = ds_grid_get(pieces, 4, pieceEntry);
-            var pieceDisplay = charge;
+            var pieceDisplay = piece;
             if(active == 1) pieceDisplay = string(moves) + "/" + string(charge);
             
             pieceCreate.pieceID = piece;

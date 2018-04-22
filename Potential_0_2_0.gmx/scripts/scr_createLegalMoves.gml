@@ -8,8 +8,7 @@ if(ds_exists(global.jumpablePieces, ds_type_grid)) ds_grid_destroy(global.jumpab
 //---Create table to store legal moves---
 //  Tables are a full representation of the board
 global.legalMoves = ds_grid_create(10, 10);
-global.jumpablePieces = ds_grid_create(10, 10) 
-ds_grid_set_region(global.jumpablePieces, 0, 0, 9, 9, " ");
+global.jumpablePieces = ds_grid_create(10, 10);
 
 //---These need one less to convert to a zero based array---
 var gridHeight = ds_grid_height(board) - 1;
@@ -58,8 +57,3 @@ for(i = startY; i <= endY; i++){
         }
     }
 };
-
-obj_debugger.visible = true;
-obj_debugger.text = ds_grid_write(global.jumpablePieces);
-
-

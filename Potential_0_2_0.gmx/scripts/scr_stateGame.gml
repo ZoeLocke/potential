@@ -68,11 +68,7 @@ if(spaceLegal){
         var newX = space.col;
         var newY = space.row;
         
-        var prevMoves = ds_grid_get(pieces, 3, activePieceEntryRow);
-        
-        //  Set charge
-        var jumpedPiece = ds_grid_get(global.jumpablePieces, newX, newY);
-        
+        var prevMoves = ds_grid_get(pieces, 3, activePieceEntryRow);       
         
         //  Set moves
         ds_grid_set(pieces, 3, activePieceEntryRow, prevMoves+1);
@@ -81,9 +77,22 @@ if(spaceLegal){
         ds_grid_set(board, currentX, currentY, 0);
         ds_grid_set(board, newX, newY, activePiece);
         
-        //  Repopulate borad
+        //  Repopulate board
         var currentMoves = ds_grid_get(pieces, 3, activePieceEntryRow);
         var currentCharge = ds_grid_get(pieces, 2, activePieceEntryRow);
+        
+        //  Set charge if a piece is jumped
+        var jumpedPiece = ds_grid_get(global.jumpablePieces, newX, newY);
+        if(jumpedPiece > ""){
+            //  Identofy and set charge for jumped piece
+            var jumpedPieceEntryRow = ds_grid_value_y(pieces, 0, 0, 0, ds_grid_height(pieces) - 1, jumpedPiece);
+            var jumpedPieceNewCharge = ds_grid_get(pieces, 2, jumpedPieceEntryRow) - 1;
+            ds_grid_set(pieces, 2, jumpedPieceEntryRow, jumpedPieceNewCharge);
+            
+            //  Update charge for jumping piece
+            currentCharge++;
+            ds_grid_set(pieces, 2, activePieceEntryRow, currentCharge); 
+        }
         
         //  Update the display
         if(currentMoves >= currentCharge) ds_grid_set(pieces, 4, activePieceEntryRow, 0);

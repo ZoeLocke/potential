@@ -1,2 +1,4 @@
-review stateGame code, especially looking for lingering assignments of active to pieces instead of the table
-Figure out how to itterate charge when jumping
+Look into buggy start button issue
+Look into now hover animation on quit button issue
+
+Set up piece locking, player turns, turn switching, etc...

@@ -95,6 +95,9 @@ if(spaceLegal){
         }
         
         //  Update the display
+        //  If the piece has charge in excess of the legal max charge, set the variables to enforce deactivation of the piece
+        if(currentCharge > setting[1,1]) currentMoves = currentCharge;
+        //  Deactivatet he piece if it has completed all it's moves
         if(currentMoves >= currentCharge) ds_grid_set(pieces, 4, activePieceEntryRow, 0);
         scr_displayPopulateBoard();
         
@@ -106,15 +109,38 @@ if(spaceLegal){
             var piece = noone;
             with(obj_piece) if(pieceID == activePiece) piece = id;
             
-            scr_createLegalMoves(piece);
-            with(obj_boardMarker){
-                var legal = ds_grid_get(global.legalMoves, col, row);
-                if(legal == 1) visible = true;
+            if(piece != noone){
+                scr_createLegalMoves(piece);
+                with(obj_boardMarker){
+                    var legal = ds_grid_get(global.legalMoves, col, row);
+                    if(legal == 1) visible = true;
+                }
             }
         }else{
-            //Otherwise, set moves to 0
+            //Otherwise, set moves to 0 and clear markers
             ds_grid_set(pieces, 3, activePieceEntryRow, 0);
+            with(obj_boardMarker) visible = false;
+        }
+        
+        //  Remove the pieces from the bord table if needed
+        if(jumpedPieceNewCharge <= 0){
+            var pieceOnBoardX = ds_grid_value_x(board, 0, 0, boardGridWidth, boardGridHeight, jumpedPiece);
+            var pieceOnBoardY = ds_grid_value_y(board, 0, 0, boardGridWidth, boardGridHeight, jumpedPiece)
+            ds_grid_set(board, pieceOnBoardX, pieceOnBoardY, 0);
+        }
+        if(currentCharge > setting[1,1]){
+            var pieceOnBoardX = ds_grid_value_x(board, 0, 0, boardGridWidth, boardGridHeight, activePiece);
+            var pieceOnBoardY = ds_grid_value_y(board, 0, 0, boardGridWidth, boardGridHeight, activePiece);
+            ds_grid_set(board, pieceOnBoardX, pieceOnBoardY, 0);
         }
     }
 };
+
+//  Check for pieces to destroy
+with(obj_piece){
+    if(display == 0 || display > obj_controller.setting[1,1]){
+        //  Decrease the alpha and destroy the phyical piece
+        if(image_alpha - 0.1 > 0) image_alpha -= 0.1 else instance_destroy();
+    };
+}
 

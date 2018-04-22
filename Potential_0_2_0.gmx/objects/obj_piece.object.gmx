@@ -29,10 +29,7 @@
 image_speed = 0;
 var colour = 0;
 image_index = colour;
-pieceID = "A1";
-charge = 100;
-moves = 0;
-display = charge;
+display = "";
 </string>
           </argument>
         </arguments>

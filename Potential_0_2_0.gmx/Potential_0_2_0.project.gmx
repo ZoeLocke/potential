@@ -75,6 +75,9 @@
       <script>scripts\scr_createBoardTable.gml</script>
       <script>scripts\scr_createLegalMoves.gml</script>
     </scripts>
+    <scripts name="Destroy">
+      <script>scripts\scr_destroyPiece.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shader0.shader</shader>

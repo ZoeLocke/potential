@@ -32,7 +32,6 @@ image_index = colour;
 pieceID = "A1";
 charge = 100;
 moves = 0;
-active = false;
 display = charge;
 </string>
           </argument>

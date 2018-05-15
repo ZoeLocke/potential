@@ -95,6 +95,30 @@ room_goto(rm_start);
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Transition to main game
+room_goto(rm_game);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
@@ -113,7 +137,7 @@ room_goto(rm_start);
           <argument>
             <kind>1</kind>
             <string>///  Transitions
-if(obj_transitionButton.transition == "PLAY") room_goto(rm_game);
+if(obj_transitionButton.transition == "PLAY") room_goto(rm_loading);
 if(obj_transitionButton.transition == "QUIT") room_goto(rm_start);
 </string>
           </argument>
@@ -139,6 +163,7 @@ if(obj_transitionButton.transition == "QUIT") room_goto(rm_start);
             <kind>1</kind>
             <string>/// Restore clicked button
 activeButton.y -= 5;
+
 </string>
           </argument>
         </arguments>
@@ -192,11 +217,16 @@ script_execute(state);
           <argument>
             <kind>1</kind>
             <string>/// On start of room scripts
-scr_displayStartSetup();
+if(room == rm_start) scr_displaySetup();
+
+// This alarm ensures the loading screen alway displays
+if(room == rm_loading)alarm_set(2, 30);
+
 if(room == rm_game){
     scr_createConfigsTable();
     scr_createPieceTable();
     scr_createBoardTable();
+    scr_displaySetup();
     
     scr_displayPopulateBoard();   
 };

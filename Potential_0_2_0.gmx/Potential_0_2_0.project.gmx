@@ -26,6 +26,7 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_logo</sprite>
+    <sprite>sprites\spr_loading</sprite>
     <sprites name="Boards">
       <sprite>sprites\spr_boardFullEntropy</sprite>
       <sprite>sprites\spr_boardEndsEntropy</sprite>
@@ -55,7 +56,7 @@
   <scripts name="scripts">
     <scripts name="Display">
       <script>scripts\scr_displayScaleRoom.gml</script>
-      <script>scripts\scr_displayStartSetup.gml</script>
+      <script>scripts\scr_displaySetup.gml</script>
       <script>scripts\scr_displayStartLive.gml</script>
       <script>scripts\scr_displayPopulateBoard.gml</script>
     </scripts>
@@ -87,6 +88,7 @@
     <font>fonts\fnt_setting</font>
     <font>fonts\fnt_charge</font>
     <font>fonts\fnt_label</font>
+    <font>fonts\fnt_large</font>
     <font>fonts\fnt_smallPrint</font>
   </fonts>
   <objects name="objects">
@@ -94,6 +96,7 @@
       <object>objects\obj_controller</object>
       <object>objects\obj_debugOLD</object>
       <object>objects\obj_debugger</object>
+      <object>objects\obj_loading</object>
     </objects>
     <objects name="Game">
       <objects name="Text">
@@ -101,6 +104,7 @@
         <object>objects\txt_smallPrint</object>
         <object>objects\txt_subtitle</object>
         <object>objects\txt_settingText</object>
+        <object>objects\txt_loading</object>
       </objects>
       <objects name="Components">
         <object>objects\obj_board</object>
@@ -115,6 +119,7 @@
   <rooms name="rooms">
     <room>rooms\rm_init</room>
     <room>rooms\rm_start</room>
+    <room>rooms\rm_loading</room>
     <room>rooms\rm_game</room>
   </rooms>
   <help>

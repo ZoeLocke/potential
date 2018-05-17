@@ -1,4 +1,4 @@
-Look into buggy start button issue
+Add a loading screen overlay
 Look into now hover animation on quit button issue
 
 Set up piece locking, player turns, turn switching, etc...
